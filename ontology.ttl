@@ -1,0 +1,340 @@
+# baseURI: http://schema.oceanproteinportal.org/v1.0/
+# imports: http://ocean-data.org/schema/data-type/v1.0/
+# imports: http://ocean-data.org/schema/
+# prefix: odo-dt
+
+@prefix : <http://schema.oceanproteinportal.org/v1.0/> .
+@prefix opp: <http://schema.oceanproteinportal.org/v1.0/> .
+@prefix odo-dt: <http://ocean-data.org/schema/data-type/v1.0/> .
+@prefix odo: <http://ocean-data.org/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#### Ontology
+
+<http://schema.oceanproteinportal.org/v1.0/> a owl:Ontology ;
+    rdfs:label "Ocean Protein Portal Ontology"@en-US ;
+    rdfs:comment "An ontology for describing data types used by the Ocean Protein Portal"@en-US ;
+    dc:creator "Adam Shepherd" ;
+    dct:creator <http://orcid.org/0000-0003-4486-9448> ;
+    dc:publisher "Biological and Chemical Oceanography Data Management Office (BCO-DMO)" ;
+    dct:publisher <http://lod.bco-dmo.org/id/affiliation/191> ;
+    dct:issued "2019-03-02"^^xsd:date ;
+    dct:source "https://github.com/oceanproteinportal/Data-Type-Ontology"^^xsd:anyURI ;
+    owl:imports <http://ocean-data.org/schema/> ;
+    owl:imports <http://ocean-data.org/schema/data-type/v1.0/> ;
+    owl:versionInfo "1.0" .
+    
+    
+ #### Annotation Properties
+
+dc:creator a owl:AnnotationProperty .
+dct:creator a owl:AnnotationProperty .
+dc:publisher a owl:AnnotationProperty .
+dct:publisher a owl:AnnotationProperty .
+dct:issued a owl:AnnotationProperty .
+dct:source a owl:AnnotationProperty .
+
+
+#### Named Individuals ####
+
+### Data Types ###
+
+opp:OceanProteinPortalDataType a owl:NamedIndividual,
+        opp:DataType ;
+    rdfs:label "Ocean Protein Portal Data Type"@en-US ;
+    rdfs:comment "A data type fit for use within the Ocean Protein Portal."@en-US .
+        
+opp:OceanProteinPortalDataType_Total-Spectral-Counts a owl:NamedIndividual,
+        opp:DataType ;
+    rdfs:subClassOf opp:OceanProteinPortalDataType ;
+    rdfs:label "Ocean Protein Portal Data Type - Total Spectral Counts"@en-US ;
+    rdfs:comment "A data type that measures the total spectral counts across protein observations and their peptides."@en-US ;
+    opp:aggregates opp:ProteinSpectralCounts,
+        opp:FASTA-ProteinIdentifications,
+        opp:PeptideSpectralCounts .
+
+opp:ProteinSpectralCounts a opp:DataType,
+        owl:NamedIndividual ;
+    rdfs:label "Protein Spectral Counts"@en-US ;
+    rdfs:comment "A data type that measures the total spectral counts across protein observations."@en-US ;
+    odo-dt:measures odo-dt:SampleIdentifier,
+        odo-dt:CruiseIdentifier,
+        odo-dt:CruiseStationIdentifier,
+        odo-dt:Latitude_DecimalDegrees,
+        odo-dt:Longitude_DecimalDegrees,
+        odo-dt:Depth_Meters,
+        odo-dt:Date,
+        odo-dt:Time,
+        odo-dt:DateTime,
+        odo-dt:MinFilterSize_Microns,
+        odo-dt:MaxFilterSize_Microns,
+        opp:ProteinIdentifier,
+        opp:IdentifiedProductName,
+        opp:OtherIdentifiedProteins,
+        odo-dt:SpectralCount,
+        odo-dt:MolecularWeight_Daltons,
+        opp:BestNCBITaxonName,
+        opp:BestNCBITaxonIdentifier,
+        opp:KeggIdentifier,
+        opp:KeggName,
+        opp:KeggDescription,
+        opp:PfamsIdentifier,
+        opp:PfamsDescription,
+        opp:EnzymeCommissionIdentifier,
+        opp:UniprotIdentifier ;
+    odo-dt:requires odo-dt:SampleIdentifier,
+        odo-dt:CruiseIdentifier,
+        odo-dt:CruiseStationIdentifier,
+        odo-dt:Latitude_DecimalDegrees,
+        odo-dt:Longitude_DecimalDegrees,
+        odo-dt:Depth_Meters,
+        odo-dt:Date,
+        odo-dt:MinFilterSize_Microns,
+        odo-dt:MaxFilterSize_Microns,
+        opp:ProteinIdentifier,
+        opp:IdentifiedProductName,
+        odo-dt:SpectralCount ;
+    odo-dt:recommends odo-dt:Time .
+
+opp:FASTA-ProteinIdentifications a opp:DataType,
+        owl:NamedIndividual ;
+    rdfs:label "FASTA File of Protein Identifications"@en-US ;
+    rdfs:comment "A data type that records the genetic sequence of an identified protein."@en-US ;
+    odo-dt:measures opp:ProteinIdentifier,
+        odo-dt:ProteinGeneticSequenceIdentifier ;
+    odo-dt:requires opp:ProteinIdentifier,
+        odo-dt:ProteinGeneticSequenceIdentifier .
+
+opp:PeptideSpectralCounts a opp:DataType,
+        owl:NamedIndividual ;
+    rdfs:label "Tabular File of Peptide Spectral Counts"@en-US  ;
+    opp:measures odo-dt:SampleIdentifier,
+        odo-dt:CruiseIdentifier,
+        odo-dt:CruiseStationIdentifier,
+        odo-dt:Latitude_DecimalDegrees,
+        odo-dt:Longitude_DecimalDegrees,
+        odo-dt:Depth_Meters,
+        odo-dt:Date,
+        odo-dt:Time,
+        odo-dt:DateTime,
+        odo-dt:MinFilterSize_Microns,
+        odo-dt:MaxFilterSize_Microns,
+        opp:PeptideGeneticSequenceIdentifier,
+        opp:PeptideStartIndex,
+        opp:PeptideStopIndex,
+        opp:ProteinIdentifier,
+        opp:OtherIdentifiedProteins,
+        opp:PeptideSpectralCountSum,
+        opp:ProteinMolecularWeight_Daltons,
+        opp:BestProteinIdentifierProbability,
+        opp:BestSequestXCorrScore,
+        opp:BestSequestDCnScore,
+        odo-dt:MedianRetentionTime,
+        opp:Plus2HSpectraCount,
+        opp:Plus3HSpectraCount,
+        opp:Plus4HSpectraCount,
+        odo-dt:TotalPrecursorIntensity,
+        odo-dt:TotalIonChromatogram ,
+        opp:AbsoluteUnits_FemtomolePerLiter ;
+    opp:requires opp:CruiseIdentifier,
+        odo-dt:CruiseStationIdentifier,
+        odo-dt:Latitude_DecimalDegrees,
+        odo-dt:Longitude_DecimalDegrees,
+        odo-dt:Depth_Meters,
+        odo-dt:Date,
+        odo-dt:MinFilterSize_Microns,
+        odo-dt:MaxFilterSize_Microns,
+        opp:ProteinIdentifier,
+        opp:PeptideGeneticSequenceIdentifier,
+        opp:PeptideStartIndex,
+        opp:PeptideStopIndex ;
+    opp:recommends odo-dt:Time,
+        opp:PeptideSpectralCountSum .
+
+### Diagrams ###
+
+opp:OceanProteinPortal_Total-Spectral-Counts_Diagram a owl:NamedIndividual,
+        odo-dt:EntityRelationshipDiagram ;
+    odo-dt:diagramsEntityRelationshipsFor opp:OceanProteinPortal_Total-Spectral-Counts ;
+    schema:contentUrl "http://schema.oceanproteinportal.org/v1.0/diagram/OPP_TotalSpectralCounts_DataType.png"^^xsd:anyURI ;
+    schema:encodingFormat "image/png"^^xsd:string ;
+    rdfs:label "Diagram of Ocean Protein Portal Total Spectral Counts Dataset"@en-US ;
+    rdfs:comment "A diagram of the Ocean Protein Portal Total Spectral Counts Dataset."@en-US .
+    
+### Subject Area ###
+
+opp:OceanProteomics a owl:NamedIndividual ,
+        opp:SubjectArea ;
+    rdfs:subClassOf odo-dt:Proteomics ;
+    rdfs:label "Ocean Proteomics"@en-US ;
+    rdfs:comment "Ocean Proteomics"@en-US .
+
+### Parameter ###
+
+opp:ProteinIdentifier a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Identifier ;
+    rdfs:label "Protein Identifier"@en-US ;
+    rdfs:comment "Uniquely identifies one proteins within a sample."@en-US .
+    
+opp:OtherIdentifiedProteins a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Identifier ;
+    rdfs:label "Other Identified Proteins"@en-US ;
+    rdfs:comment "A list of other identified proteins within a sample."@en-US .
+
+opp:IdentifiedProductName a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Name ;
+    skos:related opp:ProteinIdentifier ;
+    rdfs:label "Identified Product Name"@en-US ;
+    rdfs:comment "The best product name for an identification made in a smaple (best hit annotation)."@en-US .
+
+opp:BestNCBITaxonIdentifier a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:NCBITaxonIdentifier ;
+    rdfs:label "Best NCBI Taxon Identifier"@en-US ;
+    rdfs:comment "Representative of the best taxon identifier at NCBI that could be associated to an identiciation."@en-US .
+
+opp:BestNCBITaxonName a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:NCBITaxonName ;
+    skos:related odo-dt:BestNCBITaxonIdentifier ;
+    rdfs:label "Best NCBI Taxon Name"@en-US ;
+    rdfs:comment "The best taxonomic species name at NCBI related to a Taxon identifier."@en-US .
+    
+opp:KeggOrthologyIdentifier a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Identifier ;
+    rdfs:label "Kegg Orthology Identifier"@en-US ;
+    rdfs:comment "Kegg identifier or accession."@en-US .
+
+opp:KeggOrthologyName a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Name ;
+    skos:related odo-dt:KeggIdentifier ;
+    rdfs:label "Kegg Orthology Name"@en-US ;
+    rdfs:comment "The Kegg pathway related to an identified Kegg Identifier."@en-US .
+
+opp:KeggOrthologyDescription a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Description ;
+    skos:related odo-dt:KeggIdentifier ;
+    rdfs:label "Kegg Orthology Description"@en-US ;
+    rdfs:comment "The Kegg description related to an identified Kegg Identifier."@en-US .
+
+opp:PfamsIdentifier a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Identifier ;
+    rdfs:label "Pfams Identifier"@en-US ;
+    rdfs:comment "Representative of a Pfams identifier or accession."@en-US .
+
+opp:PfamsDescription a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Description ;
+    skos:related odo-dt:PfamsIdentifier ;
+    rdfs:label "Pfams Description"@en-US ;
+    rdfs:comment "The Pfams description related to an identified PFams Identifier."@en-US .
+
+opp:EnzymeCommissionIdentifier a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Identifier ;
+    rdfs:label "Enzyme Commission Identifier"@en-US ;
+    rdfs:comment "Representative of a Enzyme Commission identifier."@en-US .
+
+opp:UniprotIdentifier a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Identifier ;
+    rdfs:label "Uniprot Identifier"@en-US ;
+    rdfs:comment "Representative of a Uniprot identifier."@en-US .
+
+opp:ProteinGeneticSequenceIdentifier a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:GeneticSequenceIdentifier ;
+    rdfs:label "Protein Genetic Sequence Identifier"@en-US ;
+    rdfs:comment "A genetic sequence identifying a protein."@en-US .
+
+opp:PeptideGeneticSequenceIdentifier a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:GeneticSequenceIdentifier ;
+    rdfs:label "Peptide Genetic Sequence Identifier"@en-US ;
+    rdfs:comment "A genetic sequence identifying a peptide."@en-US .
+    
+opp:PeptideStartIndex a owl:NamedIndividual,
+        odo:Parameter ;
+    rdfs:label "Peptide start index"@en-US ;
+    rdfs:comment "Data useful in creating peptide coverage map"@en-US .
+
+opp:PeptideStopIndex a owl:NamedIndividual,
+        odo:Parameter ;
+    skos:related odo-dt:PeptideStartIndex ;
+    rdfs:label "Peptide stop index"@en-US ;
+    rdfs:comment "Data useful in creating peptide coverage map"@en-US .
+    
+opp:BestProteinIdentifierProbability a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:IdentificationProbability ;
+    rdfs:label "Best Peptide identification probability"@en-US ;
+    rdfs:comment "Metric of peptide quality."@en-US .
+    
+opp:ProteinMolecularWeight_Daltons a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:MolecularWeightInDaltons ;
+    rdfs:label "Protein Molecular Weight in Daltons"@en-US ;
+    rdfs:comment "The molecular weight measured in Daltons of the related protein."@en-US .
+    
+opp:BestSequestDCnScore a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Score ;
+    rdfs:label "Best SEQUEST DCn score"@en-US ;
+    rdfs:comment "Metric of peptide quality."@en-US .
+
+opp:BestSequestXCorrScore a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:Score ;
+    rdfs:label "Best SEQUEST XCorr score"@en-US ;
+    rdfs:comment "Metric of peptide quality."@en-US .
+    
+opp:Plus2HSpectraCount a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:SpectralCount ;
+    rdfs:label "Number of identified +2H spectra"@en-US ;
+    rdfs:comment "Number of identified +2H spectra"@en-US .
+
+opp:Plus3HSpectraCount a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:SpectralCount ;
+    rdfs:label "Number of identified +3H spectra"@en-US ;
+    rdfs:comment "Number of identified +3H spectra"@en-US .
+
+opp:Plus4HSpectraCount a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:SpectralCount ;
+    rdfs:label "Number of identified +4H spectra"@en-US ;
+    rdfs:comment "Number of identified +4H spectra"@en-US .
+    
+opp:PeptideSpectralCountSum a owl:NamedIndividual,
+        odo:Parameter ;
+    odo-dt:specializationOf odo-dt:SpectralCount ;
+    odo-dt:summationOf opp:Plus2HSpectraCount,
+        opp:Plus3HSpectraCount,
+        opp:Plus4HSpectraCount ;
+    rdfs:label "Spectral Count Sum"@en-US ;
+    rdfs:label "Sum of the spectral counts"@en-US ;
+    rdfs:comment "Sum of +2,+3,+4 data, = total unnormalized spectral counts - Quantitative Value"@en-US .
+    
+opp:AbsoluteUnits_FemtomolePerLiter a owl:NamedIndividual,
+        odo:Parameter ;
+    rdfs:label "Absolute Units in femtomole per liter"@en-US ;
+    rdfs:comment "Absolute Units in femtomole per liter"@en-US .
+
+#### Axioms
+
+# How do we say that if a 'opp:OceanProteinPortalDataType', then it infers odo-dt:subjectArea 'opp:OceanProteomics'
