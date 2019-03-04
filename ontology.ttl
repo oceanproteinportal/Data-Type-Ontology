@@ -19,7 +19,7 @@
 #### Ontology
 
 <http://schema.oceanproteinportal.org/v1.0/> a owl:Ontology ;
-    rdfs:label "Ocean Protein Portal Ontology"@en-US ;
+    rdfs:label "Ocean Protein Portal - Data Type Ontology"@en-US ;
     rdfs:comment "An ontology for describing data types used by the Ocean Protein Portal"@en-US ;
     dc:creator "Adam Shepherd" ;
     dct:creator <http://orcid.org/0000-0003-4486-9448> ;
