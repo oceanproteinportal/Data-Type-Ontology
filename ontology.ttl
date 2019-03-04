@@ -47,20 +47,20 @@ dct:source a owl:AnnotationProperty .
 ### Data Types ###
 
 opp:OceanProteinPortalDataType a owl:NamedIndividual,
-        opp:DataType ;
+        odo-dt:DataType ;
     rdfs:label "Ocean Protein Portal Data Type"@en-US ;
     rdfs:comment "A data type fit for use within the Ocean Protein Portal."@en-US .
         
 opp:OceanProteinPortalDataType_Total-Spectral-Counts a owl:NamedIndividual,
-        opp:DataType ;
+        odo-dt:DataType ;
     rdfs:subClassOf opp:OceanProteinPortalDataType ;
     rdfs:label "Ocean Protein Portal Data Type - Total Spectral Counts"@en-US ;
     rdfs:comment "A data type that measures the total spectral counts across protein observations and their peptides."@en-US ;
-    opp:aggregates opp:ProteinSpectralCounts,
+    odo-dt:aggregates opp:ProteinSpectralCounts,
         opp:FASTA-ProteinIdentifications,
         opp:PeptideSpectralCounts .
 
-opp:ProteinSpectralCounts a opp:DataType,
+opp:ProteinSpectralCounts a odo-dt:DataType,
         owl:NamedIndividual ;
     rdfs:label "Protein Spectral Counts"@en-US ;
     rdfs:comment "A data type that measures the total spectral counts across protein observations."@en-US ;
@@ -103,7 +103,7 @@ opp:ProteinSpectralCounts a opp:DataType,
         odo-dt:SpectralCount ;
     odo-dt:recommends odo-dt:Time .
 
-opp:FASTA-ProteinIdentifications a opp:DataType,
+opp:FASTA-ProteinIdentifications a odo-dt:DataType,
         owl:NamedIndividual ;
     rdfs:label "FASTA File of Protein Identifications"@en-US ;
     rdfs:comment "A data type that records the genetic sequence of an identified protein."@en-US ;
@@ -112,10 +112,10 @@ opp:FASTA-ProteinIdentifications a opp:DataType,
     odo-dt:requires opp:ProteinIdentifier,
         odo-dt:ProteinGeneticSequenceIdentifier .
 
-opp:PeptideSpectralCounts a opp:DataType,
+opp:PeptideSpectralCounts a odo-dt:DataType,
         owl:NamedIndividual ;
     rdfs:label "Tabular File of Peptide Spectral Counts"@en-US  ;
-    opp:measures odo-dt:SampleIdentifier,
+    odo-dt:measures odo-dt:SampleIdentifier,
         odo-dt:CruiseIdentifier,
         odo-dt:CruiseStationIdentifier,
         odo-dt:Latitude_DecimalDegrees,
@@ -143,7 +143,7 @@ opp:PeptideSpectralCounts a opp:DataType,
         odo-dt:TotalPrecursorIntensity,
         odo-dt:TotalIonChromatogram ,
         opp:AbsoluteUnits_FemtomolePerLiter ;
-    opp:requires opp:CruiseIdentifier,
+    odo-dt:requires opp:CruiseIdentifier,
         odo-dt:CruiseStationIdentifier,
         odo-dt:Latitude_DecimalDegrees,
         odo-dt:Longitude_DecimalDegrees,
@@ -155,7 +155,7 @@ opp:PeptideSpectralCounts a opp:DataType,
         opp:PeptideGeneticSequenceIdentifier,
         opp:PeptideStartIndex,
         opp:PeptideStopIndex ;
-    opp:recommends odo-dt:Time,
+    odo-dt:recommends odo-dt:Time,
         opp:PeptideSpectralCountSum .
 
 ### Diagrams ###
@@ -171,7 +171,7 @@ opp:OceanProteinPortal_Total-Spectral-Counts_Diagram a owl:NamedIndividual,
 ### Subject Area ###
 
 opp:OceanProteomics a owl:NamedIndividual ,
-        opp:SubjectArea ;
+        odo-dt:SubjectArea ;
     rdfs:subClassOf odo-dt:Proteomics ;
     rdfs:label "Ocean Proteomics"@en-US ;
     rdfs:comment "Ocean Proteomics"@en-US .
