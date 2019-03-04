@@ -109,9 +109,9 @@ opp:FASTA-ProteinIdentifications a odo-dt:DataType,
     rdfs:label "FASTA File of Protein Identifications"@en-US ;
     rdfs:comment "A data type that records the genetic sequence of an identified protein."@en-US ;
     odo-dt:measures opp:ProteinIdentifier,
-        odo-dt:ProteinGeneticSequenceIdentifier ;
+        opp:ProteinGeneticSequenceIdentifier ;
     odo-dt:requires opp:ProteinIdentifier,
-        odo-dt:ProteinGeneticSequenceIdentifier .
+        opp:ProteinGeneticSequenceIdentifier .
 
 opp:PeptideSpectralCounts a odo-dt:DataType,
         owl:NamedIndividual ;
@@ -171,11 +171,10 @@ opp:OceanProteinPortal_Total-Spectral-Counts_Diagram a owl:NamedIndividual,
     
 ### Subject Area ###
 
-opp:OceanProteomics a owl:NamedIndividual ,
+opp:OceanMetaproteomics a owl:NamedIndividual ,
         odo-dt:SubjectArea ;
-    rdfs:subClassOf odo-dt:Proteomics ;
-    rdfs:label "Ocean Proteomics"@en-US ;
-    rdfs:comment "Ocean Proteomics"@en-US .
+    rdfs:label "Ocean Metaproteomics"@en-US ;
+    rdfs:comment "Metaproteomics of the ocean."@en-US .
 
 ### Parameter ###
 
@@ -207,7 +206,7 @@ opp:BestNCBITaxonIdentifier a owl:NamedIndividual,
 opp:BestNCBITaxonName a owl:NamedIndividual,
         odo:Parameter ;
     odo-dt:specializationOf odo-dt:NCBITaxonName ;
-    skos:related odo-dt:BestNCBITaxonIdentifier ;
+    skos:related opp:BestNCBITaxonIdentifier ;
     rdfs:label "Best NCBI Taxon Name"@en-US ;
     rdfs:comment "The best taxonomic species name at NCBI related to a Taxon identifier."@en-US .
     
@@ -220,14 +219,14 @@ opp:KeggOrthologyIdentifier a owl:NamedIndividual,
 opp:KeggOrthologyName a owl:NamedIndividual,
         odo:Parameter ;
     odo-dt:specializationOf odo-dt:Name ;
-    skos:related odo-dt:KeggIdentifier ;
+    skos:related opp:KeggOrthologyIdentifier ;
     rdfs:label "Kegg Orthology Name"@en-US ;
     rdfs:comment "The Kegg pathway related to an identified Kegg Identifier."@en-US .
 
 opp:KeggOrthologyDescription a owl:NamedIndividual,
         odo:Parameter ;
     odo-dt:specializationOf odo-dt:Description ;
-    skos:related odo-dt:KeggIdentifier ;
+    skos:related opp:KeggOrthologyIdentifier ;
     rdfs:label "Kegg Orthology Description"@en-US ;
     rdfs:comment "The Kegg description related to an identified Kegg Identifier."@en-US .
 
@@ -240,7 +239,7 @@ opp:PfamsIdentifier a owl:NamedIndividual,
 opp:PfamsDescription a owl:NamedIndividual,
         odo:Parameter ;
     odo-dt:specializationOf odo-dt:Description ;
-    skos:related odo-dt:PfamsIdentifier ;
+    skos:related opp:PfamsIdentifier ;
     rdfs:label "Pfams Description"@en-US ;
     rdfs:comment "The Pfams description related to an identified PFams Identifier."@en-US .
 
@@ -275,7 +274,7 @@ opp:PeptideStartIndex a owl:NamedIndividual,
 
 opp:PeptideStopIndex a owl:NamedIndividual,
         odo:Parameter ;
-    skos:related odo-dt:PeptideStartIndex ;
+    skos:related opp:PeptideStartIndex ;
     rdfs:label "Peptide stop index"@en-US ;
     rdfs:comment "Data useful in creating peptide coverage map"@en-US .
     
