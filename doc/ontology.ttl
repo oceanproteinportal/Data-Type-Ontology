@@ -1,0 +1,915 @@
+@prefix : <http://schema.oceanproteinportal.org/v1.0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://schema.oceanproteinportal.org/v1.0/> .
+
+<http://schema.oceanproteinportal.org/v1.0/> rdf:type owl:Ontology ;
+                                              owl:imports <http://ocean-data.org/schema/data-type/v1.0/> ;
+                                              <http://purl.org/dc/elements/1.1/creator> "Adam Shepherd" ;
+                                              <http://purl.org/dc/elements/1.1/publisher> "Biological and Chemical Oceanography Data Management Office (BCO-DMO)"@en-us ,
+                                                                                          "Biological and Chemical Oceanography Data Management Office (BCO-DMO)" ;
+                                              <http://purl.org/dc/terms/created> "2012-01-01"@en-us ;
+                                              <http://purl.org/dc/terms/creator> <http://orcid.org/0000-0003-4486-9448> ;
+                                              <http://purl.org/dc/terms/issued> "2019-03-02"^^xsd:date ;
+                                              <http://purl.org/dc/terms/modified> "2019-03-30"^^xsd:date ;
+                                              <http://purl.org/dc/terms/publisher> <http://lod.bco-dmo.org/id/affiliation/191> ;
+                                              <http://purl.org/dc/terms/source> "https://github.com/oceanproteinportal/Data-Type-Ontology"^^xsd:anyURI ;
+                                              <http://purl.org/dc/terms/title> "Ocean Protein Portal Ontology"@en-us ;
+                                              <http://purl.org/vocab/vann/preferredNamespaceUri> "http://schema.oceanproteinportal.org/v1.0/"^^xsd:anyURI ,
+                                                                                                 "odo-dt" ;
+                                              rdfs:comment "An ontology for describing data types used by the Ocean Protein Portal"@en-us ;
+                                              rdfs:label "Ocean Protein Portal Ontology"@en-us ;
+                                              rdfs:seeAlso <http://info.deepcarbon.net/schema#DataType> ;
+                                              owl:versionInfo "1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+<http://purl.org/dc/elements/1.1/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/hasPart
+<http://purl.org/dc/terms/hasPart> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/odo-annotationOf
+:odo-annotationOf rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ocean-data.org/schema/data-type/v1.0/aggregates
+<http://ocean-data.org/schema/data-type/v1.0/aggregates> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                                         rdfs:range <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                                         rdfs:comment """Aggregates means that the domain DataType is a new DataType that requires
+        at least one instance of the aggregates range."""@en-us ;
+                                                         rdfs:label "aggregates"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/annotationOf
+<http://ocean-data.org/schema/data-type/v1.0/annotationOf> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <http://ocean-data.org/schema/Parameter> ;
+                                                           rdfs:range <http://ocean-data.org/schema/Parameter> ;
+                                                           rdfs:comment "The defining Parameter is an annotation of the target Parameter"@en-us ;
+                                                           rdfs:label "annotationOf"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/dataType
+<http://ocean-data.org/schema/data-type/v1.0/dataType> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://ocean-data.org/schema/Dataset> ;
+                                                       rdfs:range <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                                       rdfs:comment "Specifies that a Dataset meets the criteria for a certain DataType."@en-us ;
+                                                       rdfs:label "dataType"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/dependsOn
+<http://ocean-data.org/schema/data-type/v1.0/dependsOn> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                        rdfs:domain <http://ocean-data.org/schema/Parameter> ;
+                                                        rdfs:range <http://ocean-data.org/schema/Parameter> ;
+                                                        rdfs:comment "This parameter depends on the existence on another parameter."@en-us ;
+                                                        rdfs:label "dependsOn"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/extends
+<http://ocean-data.org/schema/data-type/v1.0/extends> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                                      rdfs:range <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                                      rdfs:comment """Extends means that the domain DataType is a specialization of the range DataType
+        by inheriting the range's Parameters but also incluing new Parameters as part of the specialization."""@en-us ;
+                                                      rdfs:label "extends"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/inferredParameter
+<http://ocean-data.org/schema/data-type/v1.0/inferredParameter> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <http://ocean-data.org/schema/Dataset> ;
+                                                                rdfs:range <http://ocean-data.org/schema/Parameter> ;
+                                                                rdfs:comment "This inferred parameter stores the value of the parameter in range."@en-us ;
+                                                                rdfs:label "inferredParameter"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/measures
+<http://ocean-data.org/schema/data-type/v1.0/measures> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                                       rdfs:range <http://ocean-data.org/schema/Parameter> ;
+                                                       rdfs:comment "Specifies that a DataType should include the associated Parameter."@en-us ;
+                                                       rdfs:label "measures"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/recommends
+<http://ocean-data.org/schema/data-type/v1.0/recommends> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf <http://ocean-data.org/schema/data-type/v1.0/measures> ;
+                                                         rdfs:domain <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                                         rdfs:range <http://ocean-data.org/schema/Parameter> ;
+                                                         rdfs:comment """Specifies that a DataType recommends that the associated Parameter be present,
+        but does not require it."""@en-us ;
+                                                         rdfs:label "recommends"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/requires
+<http://ocean-data.org/schema/data-type/v1.0/requires> rdf:type owl:ObjectProperty ;
+                                                       rdfs:subPropertyOf <http://ocean-data.org/schema/data-type/v1.0/measures> ;
+                                                       rdfs:domain <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                                       rdfs:range <http://ocean-data.org/schema/Parameter> ;
+                                                       rdfs:comment "Specifies that a DataType must include the associated Parameter."@en-us ;
+                                                       rdfs:label "requires"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/specializationOf
+<http://ocean-data.org/schema/data-type/v1.0/specializationOf> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                               rdfs:domain <http://ocean-data.org/schema/Parameter> ;
+                                                               rdfs:range <http://ocean-data.org/schema/Parameter> ;
+                                                               rdfs:comment """This parameter is narrower version of its range. It a specialization of its range
+        by because of some detail such as a specific unit of measure or becuase it was observed
+        using a specific instrument."""@en-us ;
+                                                               rdfs:label "specializationOf"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/subjectArea
+<http://ocean-data.org/schema/data-type/v1.0/subjectArea> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                                          rdfs:range <http://ocean-data.org/schema/data-type/v1.0/SubjectArea> ;
+                                                          rdfs:comment "Specifies that the SubjectArea pertains to the observations made for a DataType."@en-us ;
+                                                          rdfs:label "subjectArea"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/summationOf
+<http://ocean-data.org/schema/data-type/v1.0/summationOf> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf <http://ocean-data.org/schema/data-type/v1.0/dependsOn> ;
+                                                          rdfs:domain <http://ocean-data.org/schema/Parameter> ;
+                                                          rdfs:range <http://ocean-data.org/schema/Parameter> ;
+                                                          rdfs:comment "The value of this Parameter is the summation of Parameters attached by this property."@en-us ;
+                                                          rdfs:label "summationOf"@en-us .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ocean-data.org/schema/data-type/v1.0/dataValueDelimiter
+<http://ocean-data.org/schema/data-type/v1.0/dataValueDelimiter> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:domain <http://ocean-data.org/schema/Parameter> ;
+                                                                 rdfs:range xsd:string ;
+                                                                 rdfs:comment """For parameters whose data value is a list of multiple values, this property defines a string
+        that determines how that value should be parsed into a list of values by specifying the string identifying
+        where the value should be split."""@en-us ;
+                                                                 rdfs:label "delimiter"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/dataValueFormat
+<http://ocean-data.org/schema/data-type/v1.0/dataValueFormat> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:domain <http://ocean-data.org/schema/Parameter> ;
+                                                              rdfs:range xsd:string ;
+                                                              rdfs:comment "A string, indicating a format for the data value that enables correct processing of the value. For example, a date value may have a format such as 'YYYY-MM-DD'. Since the a format specified here are implementation specific, this definition does not enforce any particular range on this property."@en-us ;
+                                                              rdfs:label "dataValueFormat"@en-us .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ocean-data.org/schema/Dataset
+<http://ocean-data.org/schema/Dataset> rdf:type owl:Class .
+
+
+###  http://ocean-data.org/schema/Parameter
+<http://ocean-data.org/schema/Parameter> rdf:type owl:Class .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/DataType
+<http://ocean-data.org/schema/data-type/v1.0/DataType> rdf:type owl:Class ;
+                                                       rdfs:comment """A data type can include more meaning beyond the syntax, such as who created the
+        data type, the source standard that the data type derives from,
+        the operations that can be done on datasets of that data type, and
+        typical scientific domains, software programs and/or instruments
+        that use the data type, etc. The intent is that any humans or
+        machines that when they encounter that data type can quickly
+        'understand' or be in a situation to at least 'process' details
+        within the dataset without even downloading that dataset."""@en-us ;
+                                                       rdfs:label "DataType"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/InferredParamter
+<http://ocean-data.org/schema/data-type/v1.0/InferredParamter> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://ocean-data.org/schema/Parameter> ;
+                                                               rdfs:comment """An inferred parameter is a parameter whoa value is not explicitly recorded in the Dataset,
+        but that can be inferred based on its data type and related metadata. For example, dataset collected on a Cruise
+        might not explicitly record the cruise in the dataset, but that it can be inferred through the metadata:
+        (odo:Dataset -> odo:fromDeployment [ dc:title ])."""@en-us ;
+                                                               rdfs:label "InferredParamter"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/SubjectArea
+<http://ocean-data.org/schema/data-type/v1.0/SubjectArea> rdf:type owl:Class ;
+                                                          rdfs:comment "A certain field of study used to group or filter Data Types"@en-us ;
+                                                          rdfs:label "SubjectArea"@en-us .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://ocean-data.org/schema/data-type/v1.0/DataType_CruiseResults
+<http://ocean-data.org/schema/data-type/v1.0/DataType_CruiseResults> rdf:type owl:NamedIndividual ,
+                                                                              <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                                                     <http://ocean-data.org/schema/data-type/v1.0/requires> <http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseIdentifier> ;
+                                                                     rdfs:comment "A dataset collected from one or more cruises."@en-us ;
+                                                                     rdfs:label "DataType - Cruise Results"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonIdentifier
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonIdentifier> rdf:type owl:NamedIndividual .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Count
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Count> rdf:type owl:NamedIndividual ,
+                                                                       <http://ocean-data.org/schema/Parameter> ;
+                                                              rdfs:comment "A numberic quantity measuring the occurrence of some thing."@en-us ;
+                                                              rdfs:label "Parameter - Count"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseIdentifier
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseIdentifier> rdf:type owl:NamedIndividual ,
+                                                                                  <http://ocean-data.org/schema/Parameter> ;
+                                                                         rdfs:comment "Representative of a cruise or some other named deployment."@en-us ;
+                                                                         rdfs:label "Parameter - Cruise Identifier"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseStationIdentifier
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseStationIdentifier> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ocean-data.org/schema/Parameter> ;
+                                                                                rdfs:comment "Representative of a particular station from a cruise."@en-us ;
+                                                                                rdfs:label "Parameter - Cruise Station Identifier"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Date
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Date> rdf:type owl:NamedIndividual ,
+                                                                      <http://ocean-data.org/schema/Parameter> ;
+                                                             rdfs:comment "A year, month, and day represented in some recognized format."@en-us ;
+                                                             rdfs:label "Parameter - Date"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_DateTime
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_DateTime> rdf:type owl:NamedIndividual ,
+                                                                          <http://ocean-data.org/schema/Parameter> ;
+                                                                 <http://purl.org/dc/terms/hasPart> <http://ocean-data.org/schema/data-type/v1.0/Time> ;
+                                                                 rdfs:comment "A date time measurement."@en-us ;
+                                                                 rdfs:label "Parameter - Date Time"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth> rdf:type owl:NamedIndividual ,
+                                                                       <http://ocean-data.org/schema/Parameter> ;
+                                                              rdfs:comment "A depth."@en-us ;
+                                                              rdfs:label "Parameter - Depth"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth_Meters
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth_Meters> rdf:type owl:NamedIndividual ,
+                                                                              <http://ocean-data.org/schema/Parameter> ;
+                                                                     rdfs:comment "A depth measurement made in meters."@en-us ;
+                                                                     rdfs:label "Parameter - Depth in Meters"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Description
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Description> rdf:type owl:NamedIndividual ,
+                                                                             <http://ocean-data.org/schema/Parameter> ;
+                                                                    rdfs:comment "A description of a thing."@en-us ;
+                                                                    rdfs:label "Parameter - Description"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_FilterSize
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_FilterSize> rdf:type owl:NamedIndividual ,
+                                                                            <http://ocean-data.org/schema/Parameter> ;
+                                                                   rdfs:comment "The size of some filter."@en-us ;
+                                                                   rdfs:label "Parameter - Filter Size"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_GeneticSequenceIdentifier
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_GeneticSequenceIdentifier> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ocean-data.org/schema/Parameter> ;
+                                                                                  rdfs:comment "A genetic sequence; e.g. the order of nucleotides in DNA or RNA."@en-us ;
+                                                                                  rdfs:label "Parameter - Genetic Sequence Identifier"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_IdentificationProbability
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_IdentificationProbability> rdf:type owl:NamedIndividual ,
+                                                                                           <http://ocean-data.org/schema/Parameter> ;
+                                                                                  rdfs:comment "Metric of peptide quality."@en-us ;
+                                                                                  rdfs:label "Parameter - Best Peptide identification probability"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier> rdf:type owl:NamedIndividual ,
+                                                                            <http://ocean-data.org/schema/Parameter> ;
+                                                                   rdfs:comment "Identifier"@en-us ;
+                                                                   rdfs:label "Parameter - Identifier"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggIdentifier
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggIdentifier> rdf:type owl:NamedIndividual .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Latitude
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Latitude> rdf:type owl:NamedIndividual ,
+                                                                          <http://ocean-data.org/schema/Parameter> ;
+                                                                 rdfs:comment "Latitude."@en-us ;
+                                                                 rdfs:label "Parameter - Latitude"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Latitude_DecimalDegrees
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Latitude_DecimalDegrees> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ocean-data.org/schema/Parameter> ;
+                                                                                rdfs:comment "Latitude in decimal degrees where the values are bounded by -90 (South) and 90 (North)."@en-us ;
+                                                                                rdfs:label "Parameter - Latitude in Decimal Degress"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Longitude
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Longitude> rdf:type owl:NamedIndividual ,
+                                                                           <http://ocean-data.org/schema/Parameter> ;
+                                                                  rdfs:comment "Longitude."@en-us ;
+                                                                  rdfs:label "Parameter - Longitude"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Longitude_DecimalDegrees
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Longitude_DecimalDegrees> rdf:type owl:NamedIndividual ,
+                                                                                          <http://ocean-data.org/schema/Parameter> ;
+                                                                                 rdfs:comment "Longitude in decimal degrees where the values are bounded by -180 (West) and 1800 (East)."@en-us ;
+                                                                                 rdfs:label "Parameter - Longitude in Decical Degrees"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_MaxFilterSize_Microns
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_MaxFilterSize_Microns> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ocean-data.org/schema/Parameter> ;
+                                                                              rdfs:comment "The maximum filter size measured in microns."@en-us ;
+                                                                              rdfs:label "Parameter - Maximum Filter Size in Microns"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_MaximumFilterSize
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_MaximumFilterSize> rdf:type owl:NamedIndividual ,
+                                                                                   <http://ocean-data.org/schema/Parameter> ;
+                                                                          rdfs:comment "The maximum size of some filter."@en-us ;
+                                                                          rdfs:label "Parameter - Maximum Filter Size"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_MedianRetentionTime
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_MedianRetentionTime> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ocean-data.org/schema/Parameter> ;
+                                                                            rdfs:comment "Median Retention Time"@en-us ;
+                                                                            rdfs:label "Parameter - Median Retention Time"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_MinFilterSize_Microns
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_MinFilterSize_Microns> rdf:type owl:NamedIndividual ,
+                                                                                       <http://ocean-data.org/schema/Parameter> ;
+                                                                              rdfs:comment "The minimum filter size measured in microns."@en-us ;
+                                                                              rdfs:label "Parameter - Minimum Filter Size in Microns"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_MinimumFilterSize
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_MinimumFilterSize> rdf:type owl:NamedIndividual ,
+                                                                                   <http://ocean-data.org/schema/Parameter> ;
+                                                                          rdfs:comment "The minimum size of some filter."@en-us ;
+                                                                          rdfs:label "Parameter - Filter Size"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_MolecularWeight
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_MolecularWeight> rdf:type owl:NamedIndividual ,
+                                                                                 <http://ocean-data.org/schema/Parameter> ;
+                                                                        rdfs:comment "The molecular weight."@en-us ;
+                                                                        rdfs:label "Parameter - Molecular Weight"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_MolecularWeightInDaltons
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_MolecularWeightInDaltons> rdf:type owl:NamedIndividual .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_MolecularWeight_Daltons
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_MolecularWeight_Daltons> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ocean-data.org/schema/Parameter> ;
+                                                                                rdfs:comment "The molecular weight measured in Daltons."@en-us ;
+                                                                                rdfs:label "Parameter - Molecular Weight in Daltons"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_NCBITaxonIdentifier
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_NCBITaxonIdentifier> rdf:type owl:NamedIndividual ,
+                                                                                     <http://ocean-data.org/schema/Parameter> ;
+                                                                            rdfs:comment "An NCBI identifier for a certain taxa."@en-us ;
+                                                                            rdfs:label "Parameter - NCBI Taxon Identifier"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_NCBITaxonName
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_NCBITaxonName> rdf:type owl:NamedIndividual ,
+                                                                               <http://ocean-data.org/schema/Parameter> ;
+                                                                      rdfs:comment "The taxonomic species name at NCBI related to an NCBI identifier."@en-us ;
+                                                                      rdfs:label "Parameter - NCBI Taxon Name"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Name
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Name> rdf:type owl:NamedIndividual ,
+                                                                      <http://ocean-data.org/schema/Parameter> ;
+                                                             rdfs:comment "An identified name for a thing."@en-us ;
+                                                             rdfs:label "Parameter - Name"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Parameter_Longitude_DecimalDegrees
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Parameter_Longitude_DecimalDegrees> rdf:type owl:NamedIndividual .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStartIndex
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStartIndex> rdf:type owl:NamedIndividual .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsIdentifier
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsIdentifier> rdf:type owl:NamedIndividual .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Probability
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Probability> rdf:type owl:NamedIndividual ,
+                                                                             <http://ocean-data.org/schema/Parameter> ;
+                                                                    rdfs:comment "A probability of some thing."@en-us ;
+                                                                    rdfs:label "Parameter - Probabiliy"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinGeneticSequenceIdentifier
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinGeneticSequenceIdentifier> rdf:type owl:NamedIndividual .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_SampleIdentifier
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_SampleIdentifier> rdf:type owl:NamedIndividual ,
+                                                                                  <http://ocean-data.org/schema/Parameter> ;
+                                                                         rdfs:comment "Uniquely identifies one sample within a dataset."@en-us ;
+                                                                         rdfs:label "Parameter - Sample Identifier"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Score
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Score> rdf:type owl:NamedIndividual ,
+                                                                       <http://ocean-data.org/schema/Parameter> ;
+                                                              rdfs:comment "An arbitrary value representing the quality of some thing."@en-us ;
+                                                              rdfs:label "Parameter - Score"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount> rdf:type owl:NamedIndividual ,
+                                                                               <http://ocean-data.org/schema/Parameter> ;
+                                                                      rdfs:comment "The spectral count for an identifified protein."@en-us ;
+                                                                      rdfs:label "Parameter - Spectral Count"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_StationIdentifier
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_StationIdentifier> rdf:type owl:NamedIndividual ,
+                                                                                   <http://ocean-data.org/schema/Parameter> ;
+                                                                          rdfs:comment "Representative of a particular station."@en-us ;
+                                                                          rdfs:label "Parameter - Station Identifier"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_Time
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_Time> rdf:type owl:NamedIndividual ,
+                                                                      <http://ocean-data.org/schema/Parameter> ;
+                                                             rdfs:comment "An hour, minutes, and seconds represented in some recognized format."@en-us ;
+                                                             rdfs:label "Parameter - Date"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_TotalIonChromatogram
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_TotalIonChromatogram> rdf:type owl:NamedIndividual ,
+                                                                                      <http://ocean-data.org/schema/Parameter> ;
+                                                                             rdfs:comment "Total Ion Chromatogram"@en-us ;
+                                                                             rdfs:label "Parameter - Total Ion Chromatogram"@en-us ;
+                                                                             <http://www.w3.org/2004/02/skos/core#altLabel> "TIC" .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/Parameter_TotalPrecursorIntensity
+<http://ocean-data.org/schema/data-type/v1.0/Parameter_TotalPrecursorIntensity> rdf:type owl:NamedIndividual ,
+                                                                                         <http://ocean-data.org/schema/Parameter> ;
+                                                                                rdfs:comment "Total Precursor Intensity"@en-us ;
+                                                                                rdfs:label "Parameter - Total Precursor Intensity"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0/SubjectArea_Proteomics
+<http://ocean-data.org/schema/data-type/v1.0/SubjectArea_Proteomics> rdf:type owl:NamedIndividual ,
+                                                                              <http://ocean-data.org/schema/data-type/v1.0/SubjectArea> ;
+                                                                     rdfs:comment "Proteomics"@en-us ;
+                                                                     rdfs:label "SubjectArea - Proteomics"@en-us .
+
+
+###  http://ocean-data.org/schema/data-type/v1.0Parameter_/MedianRetentionTime
+<http://ocean-data.org/schema/data-type/v1.0Parameter_/MedianRetentionTime> rdf:type owl:NamedIndividual .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/DataType_FASTA-ProteinIdentifications
+:DataType_FASTA-ProteinIdentifications rdf:type owl:NamedIndividual ,
+                                                <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                       <http://ocean-data.org/schema/data-type/v1.0/measures> <http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinGeneticSequenceIdentifier> ,
+                                                                                              :Parameter_ProteinIdentifier ;
+                                       <http://ocean-data.org/schema/data-type/v1.0/requires> <http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinGeneticSequenceIdentifier> ,
+                                                                                              :Parameter_ProteinIdentifier ;
+                                       rdfs:comment "A data type that records the genetic sequence of an identified protein."@en-us ;
+                                       rdfs:label "Data Type - FASTA File of Protein Identifications"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/DataType_OceanProteinPortalDataType_Total-Spectral-Counts
+:DataType_OceanProteinPortalDataType_Total-Spectral-Counts rdf:type owl:NamedIndividual ,
+                                                                    <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                                           <http://ocean-data.org/schema/data-type/v1.0/aggregates> :DataType_FASTA-ProteinIdentifications ,
+                                                                                                                    :DataType_PeptideSpectralCounts ,
+                                                                                                                    :DataType_ProteinSpectralCounts ;
+                                                           rdfs:comment "A aggreagate dataset of protein total spectral counts and pepetide total spectral counts and protein identifications"@en-us ;
+                                                           rdfs:label "Data Type - Total Spectral Counts"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/DataType_PeptideSpectralCounts
+:DataType_PeptideSpectralCounts rdf:type owl:NamedIndividual ,
+                                         <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                <http://ocean-data.org/schema/data-type/v1.0/measures> <http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseIdentifier> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseStationIdentifier> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Date> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_DateTime> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth_Meters> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Latitude_DecimalDegrees> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_MaxFilterSize_Microns> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_MinFilterSize_Microns> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Parameter_Longitude_DecimalDegrees> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_SampleIdentifier> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Time> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_TotalIonChromatogram> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_TotalPrecursorIntensity> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0Parameter_/MedianRetentionTime> ,
+                                                                                       :Parameter_AbsoluteUnits-FemtomolePerLiter ,
+                                                                                       :Parameter_BestProteinIdentifierProbability ,
+                                                                                       :Parameter_BestSequestDCnScore ,
+                                                                                       :Parameter_BestSequestXCorrScore ,
+                                                                                       :Parameter_OtherIdentifiedProteins ,
+                                                                                       :Parameter_PeptideGeneticSequenceIdentifier ,
+                                                                                       :Parameter_PeptideSpectralCountSum ,
+                                                                                       :Parameter_PeptideStartIndex ,
+                                                                                       :Parameter_PeptideStopIndex ,
+                                                                                       :Parameter_Plus2HSpectraCount ,
+                                                                                       :Parameter_Plus3HSpectraCount ,
+                                                                                       :Parameter_Plus4HSpectraCount ,
+                                                                                       :Parameter_ProteinIdentifier ,
+                                                                                       :Parameter_ProteinMolecularWeight_Daltons ;
+                                <http://ocean-data.org/schema/data-type/v1.0/recommends> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Time> ,
+                                                                                         :Parameter_PeptideSpectralCountSum ;
+                                <http://ocean-data.org/schema/data-type/v1.0/requires> <http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseStationIdentifier> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Date> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth_Meters> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Latitude_DecimalDegrees> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Longitude_DecimalDegrees> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_MaxFilterSize_Microns> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_MinFilterSize_Microns> ,
+                                                                                       :Parameter_CruiseIdentifier ,
+                                                                                       :Parameter_PeptideGeneticSequenceIdentifier ,
+                                                                                       :Parameter_PeptideStartIndex ,
+                                                                                       :Parameter_PeptideStopIndex ,
+                                                                                       :Parameter_ProteinIdentifier ;
+                                rdfs:label "Data Type - Peptide Spectral Counts"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/DataType_ProteinSpectralCounts
+:DataType_ProteinSpectralCounts rdf:type owl:NamedIndividual ,
+                                         <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+                                <http://ocean-data.org/schema/data-type/v1.0/measures> <http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseIdentifier> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseStationIdentifier> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Date> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_DateTime> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth_Meters> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Latitude_DecimalDegrees> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Longitude_DecimalDegrees> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_MaxFilterSize_Microns> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_MinFilterSize_Microns> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_MolecularWeight_Daltons> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_SampleIdentifier> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Time> ,
+                                                                                       :Parameter_BestNCBITaxonIdentifier ,
+                                                                                       :Parameter_BestNCBITaxonName ,
+                                                                                       :Parameter_EnzymeCommissionIdentifier ,
+                                                                                       :Parameter_IdentifiedProductName ,
+                                                                                       :Parameter_KeggDescription ,
+                                                                                       :Parameter_KeggIdentifier ,
+                                                                                       :Parameter_KeggName ,
+                                                                                       :Parameter_OtherIdentifiedProteins ,
+                                                                                       :Parameter_PfamsDescription ,
+                                                                                       :Parameter_PfamsIdentifier ,
+                                                                                       :Parameter_ProteinIdentifier ,
+                                                                                       :Parameter_UniprotIdentifier ;
+                                <http://ocean-data.org/schema/data-type/v1.0/recommends> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Time> ;
+                                <http://ocean-data.org/schema/data-type/v1.0/requires> <http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseIdentifier> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseStationIdentifier> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Date> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth_Meters> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Latitude_DecimalDegrees> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_Longitude_DecimalDegrees> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_MaxFilterSize_Microns> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_MinFilterSize_Microns> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_SampleIdentifier> ,
+                                                                                       <http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount> ,
+                                                                                       :Parameter_IdentifiedProductName ,
+                                                                                       :Parameter_ProteinIdentifier ;
+                                rdfs:comment "A data type that measures the total spectral counts across protein observations."@en-us ;
+                                rdfs:label "Data Type - Protein Spectral Counts"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_AbsoluteUnits-FemtomolePerLiter
+:Parameter_AbsoluteUnits-FemtomolePerLiter rdf:type owl:NamedIndividual ,
+                                                    <http://ocean-data.org/schema/Parameter> ;
+                                           rdfs:comment "Absolute Units in femtomole per liter"@en-us ;
+                                           rdfs:label "Parameter - Absolute Units in femtomole per liter"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_BestNCBITaxonIdentifier
+:Parameter_BestNCBITaxonIdentifier rdf:type owl:NamedIndividual ,
+                                            <http://ocean-data.org/schema/Parameter> ;
+                                   <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_NCBITaxonIdentifier> ;
+                                   rdfs:comment "Representative of the best taxon identifier at NCBI that could be associated to an identiciation."@en-us ;
+                                   rdfs:label "Parameter - Best NCBI Taxon Identifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_BestNCBITaxonName
+:Parameter_BestNCBITaxonName rdf:type owl:NamedIndividual ,
+                                      <http://ocean-data.org/schema/Parameter> ;
+                             <http://ocean-data.org/schema/data-type/v1.0/annotationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonIdentifier> ;
+                             <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_NCBITaxonName> ;
+                             rdfs:comment "The best taxonomic species name at NCBI related to a Taxon identifier."@en-us ;
+                             rdfs:label "Parameter - Best NCBI Taxon Name"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_BestProteinIdentifierProbability
+:Parameter_BestProteinIdentifierProbability rdf:type owl:NamedIndividual ,
+                                                     <http://ocean-data.org/schema/Parameter> ;
+                                            <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_IdentificationProbability> ;
+                                            rdfs:comment "Metric of peptide quality."@en-us ;
+                                            rdfs:label "Parameter - Best Peptide identification probability"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_BestSequestDCnScore
+:Parameter_BestSequestDCnScore rdf:type owl:NamedIndividual ,
+                                        <http://ocean-data.org/schema/Parameter> ;
+                               <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Score> ;
+                               rdfs:comment "Metric of peptide quality."@en-us ;
+                               rdfs:label "Parameter - Best SEQUEST DCn score"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_BestSequestXCorrScore
+:Parameter_BestSequestXCorrScore rdf:type owl:NamedIndividual ,
+                                          <http://ocean-data.org/schema/Parameter> ;
+                                 <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Score> ;
+                                 rdfs:comment "Metric of peptide quality."@en-us ;
+                                 rdfs:label "Parameter - Best SEQUEST XCorr score"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_CruiseIdentifier
+:Parameter_CruiseIdentifier rdf:type owl:NamedIndividual .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_EnzymeCommissionIdentifier
+:Parameter_EnzymeCommissionIdentifier rdf:type owl:NamedIndividual ,
+                                               <http://ocean-data.org/schema/Parameter> ;
+                                      <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier> ;
+                                      rdfs:comment "Representative of a Enzyme Commission identifier."@en-us ;
+                                      rdfs:label "Parameter - Enzyme Commission Identifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_IdentifiedProductName
+:Parameter_IdentifiedProductName rdf:type owl:NamedIndividual ,
+                                          <http://ocean-data.org/schema/Parameter> ;
+                                 <http://ocean-data.org/schema/data-type/v1.0/annotationOf> :ProteinIdentifier ;
+                                 <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Name> ;
+                                 rdfs:comment "The best product name for an identification made in a smaple (best hit annotation)."@en-us ;
+                                 rdfs:label "Parameter - Identified Product Name"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_KeggDescription
+:Parameter_KeggDescription rdf:type owl:NamedIndividual .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_KeggIdentifier
+:Parameter_KeggIdentifier rdf:type owl:NamedIndividual .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_KeggName
+:Parameter_KeggName rdf:type owl:NamedIndividual .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyDescription
+:Parameter_KeggOrthologyDescription rdf:type owl:NamedIndividual ,
+                                             <http://ocean-data.org/schema/Parameter> ;
+                                    <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Description> ;
+                                    :odo-annotationOf <http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggIdentifier> ;
+                                    rdfs:comment "The Kegg description related to an identified Kegg Identifier."@en-us ;
+                                    rdfs:label "Parameter - Kegg Orthology Description"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyIdentifier
+:Parameter_KeggOrthologyIdentifier rdf:type owl:NamedIndividual ,
+                                            <http://ocean-data.org/schema/Parameter> ;
+                                   <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier> ;
+                                   rdfs:comment "Kegg identifier or accession."@en-us ;
+                                   rdfs:label "Parameter - Kegg Orthology Identifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyName
+:Parameter_KeggOrthologyName rdf:type owl:NamedIndividual ,
+                                      <http://ocean-data.org/schema/Parameter> ;
+                             <http://ocean-data.org/schema/data-type/v1.0/annotationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggIdentifier> ;
+                             <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Name> ;
+                             rdfs:comment "The Kegg pathway related to an identified Kegg Identifier."@en-us ;
+                             rdfs:label "Parameter - Kegg Orthology Name"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_OtherIdentifiedProteins
+:Parameter_OtherIdentifiedProteins rdf:type owl:NamedIndividual ,
+                                            <http://ocean-data.org/schema/Parameter> ;
+                                   <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier> ;
+                                   rdfs:comment "A list of other identified proteins within a sample."@en-us ;
+                                   rdfs:label "Parameter - Other Identified Proteins"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideGeneticSequenceIdentifier
+:Parameter_PeptideGeneticSequenceIdentifier rdf:type owl:NamedIndividual ,
+                                                     <http://ocean-data.org/schema/Parameter> ;
+                                            <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_GeneticSequenceIdentifier> ;
+                                            rdfs:comment "A genetic sequence identifying a peptide."@en-us ;
+                                            rdfs:label "Parameter - Peptide Genetic Sequence Identifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideSpectralCountSum
+:Parameter_PeptideSpectralCountSum rdf:type owl:NamedIndividual ,
+                                            <http://ocean-data.org/schema/Parameter> ;
+                                   <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount> ;
+                                   <http://ocean-data.org/schema/data-type/v1.0/summationOf> :Parameter_Plus2HSpectraCount ,
+                                                                                             :Parameter_Plus3HSpectraCount ,
+                                                                                             :Parameter_Plus4HSpectraCount ;
+                                   rdfs:comment "Sum of +2,+3,+4 data, = total unnormalized spectral counts - Quantitative Value"@en-us ;
+                                   rdfs:label "Parameter - Peptide Spectral Count Sum"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStartIndex
+:Parameter_PeptideStartIndex rdf:type owl:NamedIndividual ,
+                                      <http://ocean-data.org/schema/Parameter> ;
+                             rdfs:comment "Data useful in creating peptide coverage map"@en-us ;
+                             rdfs:label "Parameter - Peptide start index"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStopIndex
+:Parameter_PeptideStopIndex rdf:type owl:NamedIndividual ,
+                                     <http://ocean-data.org/schema/Parameter> ;
+                            <http://ocean-data.org/schema/data-type/v1.0/annotationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStartIndex> ;
+                            rdfs:comment "Data useful in creating peptide coverage map"@en-us ;
+                            rdfs:label "Parameter - Peptide stop index"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_PfamsDescription
+:Parameter_PfamsDescription rdf:type owl:NamedIndividual ,
+                                     <http://ocean-data.org/schema/Parameter> ;
+                            <http://ocean-data.org/schema/data-type/v1.0/annotationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsIdentifier> ;
+                            <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Description> ;
+                            rdfs:comment "The Pfams description related to an identified PFams Identifier."@en-usparameter - ;
+                            rdfs:label "Pfams Description"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_PfamsIdentifier
+:Parameter_PfamsIdentifier rdf:type owl:NamedIndividual ,
+                                    <http://ocean-data.org/schema/Parameter> ;
+                           <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier> ;
+                           rdfs:comment "Representative of a Pfams identifier or accession."@en-us ;
+                           rdfs:label "Parameter - Pfams Identifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_Plus2HSpectraCount
+:Parameter_Plus2HSpectraCount rdf:type owl:NamedIndividual ,
+                                       <http://ocean-data.org/schema/Parameter> ;
+                              <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount> ;
+                              rdfs:comment "Number of identified +2H spectra"@en-us ;
+                              rdfs:label "Parameter - Number of identified +2H spectra"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_Plus3HSpectraCount
+:Parameter_Plus3HSpectraCount rdf:type owl:NamedIndividual ,
+                                       <http://ocean-data.org/schema/Parameter> ;
+                              <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount> ;
+                              rdfs:comment "Number of identified +3H spectra"@en-us ;
+                              rdfs:label "Parameter - Number of identified +3H spectra"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_Plus4HSpectraCount
+:Parameter_Plus4HSpectraCount rdf:type owl:NamedIndividual ,
+                                       <http://ocean-data.org/schema/Parameter> ;
+                              <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount> ;
+                              rdfs:comment "Number of identified +4H spectra"@en-us ;
+                              rdfs:label "Parameter - Number of identified +4H spectra"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinGeneticSequenceIdentifier
+:Parameter_ProteinGeneticSequenceIdentifier rdf:type owl:NamedIndividual ,
+                                                     <http://ocean-data.org/schema/Parameter> ;
+                                            <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_GeneticSequenceIdentifier> ;
+                                            rdfs:comment "A genetic sequence identifying a protein."@en-us ;
+                                            rdfs:label "Parameter - Protein Genetic Sequence Identifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinIdentifier
+:Parameter_ProteinIdentifier rdf:type owl:NamedIndividual ,
+                                      <http://ocean-data.org/schema/Parameter> ;
+                             <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier> ;
+                             rdfs:comment "Uniquely identifies one proteins within a sample."@en-us ;
+                             rdfs:label "Parameter - Protein Identifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinMolecularWeight_Daltons
+:Parameter_ProteinMolecularWeight_Daltons rdf:type owl:NamedIndividual ,
+                                                   <http://ocean-data.org/schema/Parameter> ;
+                                          <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_MolecularWeightInDaltons> ;
+                                          rdfs:comment "The molecular weight measured in Daltons of the related protein."@en-us ;
+                                          rdfs:label "Parameter - Protein Molecular Weight in Daltons"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/Parameter_UniprotIdentifier
+:Parameter_UniprotIdentifier rdf:type owl:NamedIndividual ,
+                                      <http://ocean-data.org/schema/Parameter> ;
+                             <http://ocean-data.org/schema/data-type/v1.0/specializationOf> <http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier> ;
+                             rdfs:comment "Representative of a Uniprot identifier."@en-us ;
+                             rdfs:label "Parameter - Uniprot Identifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/ProteinIdentifier
+:ProteinIdentifier rdf:type owl:NamedIndividual .
+
+
+###  http://schema.oceanproteinportal.org/v1.0/SubjectArea_OceanProteomics
+:SubjectArea_OceanProteomics rdf:type owl:NamedIndividual ,
+                                      <http://ocean-data.org/schema/data-type/v1.0/SubjectArea> ;
+                             rdfs:comment "Ocean Proteoms"@en-us ;
+                             rdfs:label "Subject Area - Ocean Proteomics"@en-us .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://ocean-data.org/schema/data-type/v1.0/aggregates> ;
+  owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+  owl:onClass <http://ocean-data.org/schema/data-type/v1.0/DataType> ;
+  rdfs:subClassOf <http://ocean-data.org/schema/data-type/v1.0/DataType>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://ocean-data.org/schema/data-type/v1.0/summationOf> ;
+  owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+  owl:onClass <http://ocean-data.org/schema/Parameter> ;
+  rdfs:subClassOf <http://ocean-data.org/schema/Parameter>
+] .
+
+
+###  Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/

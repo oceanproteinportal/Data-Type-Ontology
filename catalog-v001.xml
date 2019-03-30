@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://ocean-data.org/schema/data-type/v1.0/" uri="file:/Users/ashepherd/Projects/BCO-DMO/www.bco-dmo.org/Ocean-Data-Ontology_Data-Type/odo-dt.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1553960944741" name="http://schema.oceanproteinportal.org/v1.0/" uri="opp.owl"/>
+    </group>
+</catalog>
