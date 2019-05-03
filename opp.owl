@@ -21,7 +21,7 @@
         <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-03-30</dct:modified>
         <rdfs:seeAlso rdf:resource="http://info.deepcarbon.net/schema#DataType"/>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.oceanproteinportal.org/v1.0/</vann:preferredNamespaceUri>
-        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">odo-dt</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opp</vann:preferredNamespaceUri>
         <dct:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/oceanproteinportal/Data-Type-Ontology</dct:source>
         <rdfs:comment xml:lang="en-us">An ontology for describing data types used by the Ocean Protein Portal</rdfs:comment>
         <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-03-02</dct:issued>
@@ -92,36 +92,36 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/DataType_FASTA-ProteinIdentifications -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/DataType_FASTA-ProteinIdentifications -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/DataType_FASTA-ProteinIdentifications">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/DataType_FASTA-ProteinIdentifications">
         <rdf:type rdf:resource="http://ocean-data.org/schema/data-type/v1.0/DataType"/>
         <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinGeneticSequenceIdentifier"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinIdentifier"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinIdentifier"/>
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinGeneticSequenceIdentifier"/>
-        <odo-dt:requires rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinIdentifier"/>
+        <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinIdentifier"/>
         <rdfs:comment xml:lang="en-us">A data type that records the genetic sequence of an identified protein.</rdfs:comment>
         <rdfs:label xml:lang="en-us">Data Type - FASTA File of Protein Identifications</rdfs:label>
     </owl:NamedIndividual>
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/DataType_OceanProteinPortalDataType_Total-Spectral-Counts -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/DataType_OceanProteinPortalDataType_Total-Spectral-Counts -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/DataType_OceanProteinPortalDataType_Total-Spectral-Counts">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/DataType_OceanProteinPortalDataType_Total-Spectral-Counts">
         <rdf:type rdf:resource="http://ocean-data.org/schema/data-type/v1.0/DataType"/>
-        <odo-dt:aggregates rdf:resource="http://schema.oceanproteinportal.org/v1.0/DataType_FASTA-ProteinIdentifications"/>
-        <odo-dt:aggregates rdf:resource="http://schema.oceanproteinportal.org/v1.0/DataType_PeptideSpectralCounts"/>
-        <odo-dt:aggregates rdf:resource="http://schema.oceanproteinportal.org/v1.0/DataType_ProteinSpectralCounts"/>
+        <odo-dt:aggregates rdf:resource="http://ocean-data.org/schema/data-type/v1.0/DataType_FASTA-ProteinIdentifications"/>
+        <odo-dt:aggregates rdf:resource="http://ocean-data.org/schema/data-type/v1.0/DataType_PeptideSpectralCounts"/>
+        <odo-dt:aggregates rdf:resource="http://ocean-data.org/schema/data-type/v1.0/DataType_ProteinSpectralCounts"/>
         <rdfs:comment xml:lang="en-us">A aggreagate dataset of protein total spectral counts and pepetide total spectral counts and protein identifications</rdfs:comment>
         <rdfs:label xml:lang="en-us">Data Type - Total Spectral Counts</rdfs:label>
     </owl:NamedIndividual>
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/DataType_PeptideSpectralCounts -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/DataType_PeptideSpectralCounts -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/DataType_PeptideSpectralCounts">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/DataType_PeptideSpectralCounts">
         <rdf:type rdf:resource="http://ocean-data.org/schema/data-type/v1.0/DataType"/>
         <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseIdentifier"/>
         <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseStationIdentifier"/>
@@ -137,22 +137,22 @@
         <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_TotalIonChromatogram"/>
         <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_TotalPrecursorIntensity"/>
         <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0Parameter_/MedianRetentionTime"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_AbsoluteUnits-FemtomolePerLiter"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_BestProteinIdentifierProbability"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_BestSequestDCnScore"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_BestSequestXCorrScore"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_OtherIdentifiedProteins"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideGeneticSequenceIdentifier"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideSpectralCountSum"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStartIndex"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStopIndex"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_Plus2HSpectraCount"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_Plus3HSpectraCount"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_Plus4HSpectraCount"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinIdentifier"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinMolecularWeight_Daltons"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_AbsoluteUnits-FemtomolePerLiter"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_BestProteinIdentifierProbability"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_BestSequestDCnScore"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_BestSequestXCorrScore"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_OtherIdentifiedProteins"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideGeneticSequenceIdentifier"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideSpectralCountSum"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStartIndex"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStopIndex"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus2HSpectraCount"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus3HSpectraCount"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus4HSpectraCount"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinIdentifier"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinMolecularWeight_Daltons"/>
         <odo-dt:recommends rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Time"/>
-        <odo-dt:recommends rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideSpectralCountSum"/>
+        <odo-dt:recommends rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideSpectralCountSum"/>
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseStationIdentifier"/>
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Date"/>
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth_Meters"/>
@@ -160,19 +160,19 @@
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Longitude_DecimalDegrees"/>
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_MaxFilterSize_Microns"/>
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_MinFilterSize_Microns"/>
-        <odo-dt:requires rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_CruiseIdentifier"/>
-        <odo-dt:requires rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideGeneticSequenceIdentifier"/>
-        <odo-dt:requires rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStartIndex"/>
-        <odo-dt:requires rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStopIndex"/>
-        <odo-dt:requires rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinIdentifier"/>
+        <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseIdentifier"/>
+        <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideGeneticSequenceIdentifier"/>
+        <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStartIndex"/>
+        <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStopIndex"/>
+        <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinIdentifier"/>
         <rdfs:label xml:lang="en-us">Data Type - Peptide Spectral Counts</rdfs:label>
     </owl:NamedIndividual>
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/DataType_ProteinSpectralCounts -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/DataType_ProteinSpectralCounts -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/DataType_ProteinSpectralCounts">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/DataType_ProteinSpectralCounts">
         <rdf:type rdf:resource="http://ocean-data.org/schema/data-type/v1.0/DataType"/>
         <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseIdentifier"/>
         <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseStationIdentifier"/>
@@ -187,18 +187,18 @@
         <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_SampleIdentifier"/>
         <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount"/>
         <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Time"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_BestNCBITaxonIdentifier"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_BestNCBITaxonName"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_EnzymeCommissionIdentifier"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_IdentifiedProductName"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_KeggDescription"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_KeggIdentifier"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_KeggName"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_OtherIdentifiedProteins"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_PfamsDescription"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_PfamsIdentifier"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinIdentifier"/>
-        <odo-dt:measures rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_UniprotIdentifier"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonIdentifier"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonName"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_EnzymeCommissionIdentifier"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_IdentifiedProductName"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggDescription"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggIdentifier"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggName"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_OtherIdentifiedProteins"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsDescription"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsIdentifier"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinIdentifier"/>
+        <odo-dt:measures rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_UniprotIdentifier"/>
         <odo-dt:recommends rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Time"/>
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseIdentifier"/>
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseStationIdentifier"/>
@@ -210,17 +210,17 @@
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_MinFilterSize_Microns"/>
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_SampleIdentifier"/>
         <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount"/>
-        <odo-dt:requires rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_IdentifiedProductName"/>
-        <odo-dt:requires rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinIdentifier"/>
+        <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_IdentifiedProductName"/>
+        <odo-dt:requires rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinIdentifier"/>
         <rdfs:comment xml:lang="en-us">A data type that measures the total spectral counts across protein observations.</rdfs:comment>
         <rdfs:label xml:lang="en-us">Data Type - Protein Spectral Counts</rdfs:label>
     </owl:NamedIndividual>
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_AbsoluteUnits-FemtomolePerLiter -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_AbsoluteUnits-FemtomolePerLiter -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_AbsoluteUnits-FemtomolePerLiter">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_AbsoluteUnits-FemtomolePerLiter">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <rdfs:comment xml:lang="en-us">Absolute Units in femtomole per liter</rdfs:comment>
         <rdfs:label xml:lang="en-us">Parameter - Absolute Units in femtomole per liter</rdfs:label>
@@ -228,9 +228,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_BestNCBITaxonIdentifier -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonIdentifier -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_BestNCBITaxonIdentifier">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonIdentifier">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_NCBITaxonIdentifier"/>
         <rdfs:comment xml:lang="en-us">Representative of the best taxon identifier at NCBI that could be associated to an identiciation.</rdfs:comment>
@@ -239,9 +239,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_BestNCBITaxonName -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonName -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_BestNCBITaxonName">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonName">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:annotationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonIdentifier"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_NCBITaxonName"/>
@@ -251,9 +251,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_BestProteinIdentifierProbability -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_BestProteinIdentifierProbability -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_BestProteinIdentifierProbability">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_BestProteinIdentifierProbability">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_IdentificationProbability"/>
         <rdfs:comment xml:lang="en-us">Metric of peptide quality.</rdfs:comment>
@@ -262,9 +262,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_BestSequestDCnScore -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_BestSequestDCnScore -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_BestSequestDCnScore">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_BestSequestDCnScore">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Score"/>
         <rdfs:comment xml:lang="en-us">Metric of peptide quality.</rdfs:comment>
@@ -273,9 +273,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_BestSequestXCorrScore -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_BestSequestXCorrScore -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_BestSequestXCorrScore">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_BestSequestXCorrScore">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Score"/>
         <rdfs:comment xml:lang="en-us">Metric of peptide quality.</rdfs:comment>
@@ -284,9 +284,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_EnzymeCommissionIdentifier -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_EnzymeCommissionIdentifier -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_EnzymeCommissionIdentifier">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_EnzymeCommissionIdentifier">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier"/>
         <rdfs:comment xml:lang="en-us">Representative of a Enzyme Commission identifier.</rdfs:comment>
@@ -295,11 +295,11 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_IdentifiedProductName -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_IdentifiedProductName -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_IdentifiedProductName">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_IdentifiedProductName">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
-        <odo-dt:annotationOf rdf:resource="http://schema.oceanproteinportal.org/v1.0/ProteinIdentifier"/>
+        <odo-dt:annotationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/ProteinIdentifier"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Name"/>
         <rdfs:comment xml:lang="en-us">The best product name for an identification made in a smaple (best hit annotation).</rdfs:comment>
         <rdfs:label xml:lang="en-us">Parameter - Identified Product Name</rdfs:label>
@@ -307,9 +307,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyDescription -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggOrthologyDescription -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyDescription">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggOrthologyDescription">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Description"/>
         <odo-annotationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggIdentifier"/>
@@ -319,9 +319,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyIdentifier -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggOrthologyIdentifier -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyIdentifier">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggOrthologyIdentifier">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier"/>
         <rdfs:comment xml:lang="en-us">Kegg identifier or accession.</rdfs:comment>
@@ -330,9 +330,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyName -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggOrthologyName -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyName">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggOrthologyName">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:annotationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggIdentifier"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Name"/>
@@ -342,9 +342,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_OtherIdentifiedProteins -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_OtherIdentifiedProteins -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_OtherIdentifiedProteins">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_OtherIdentifiedProteins">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier"/>
         <rdfs:comment xml:lang="en-us">A list of other identified proteins within a sample.</rdfs:comment>
@@ -353,9 +353,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideGeneticSequenceIdentifier -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideGeneticSequenceIdentifier -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideGeneticSequenceIdentifier">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideGeneticSequenceIdentifier">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_GeneticSequenceIdentifier"/>
         <rdfs:comment xml:lang="en-us">A genetic sequence identifying a peptide.</rdfs:comment>
@@ -364,23 +364,23 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideSpectralCountSum -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideSpectralCountSum -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideSpectralCountSum">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideSpectralCountSum">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount"/>
-        <odo-dt:summationOf rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_Plus2HSpectraCount"/>
-        <odo-dt:summationOf rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_Plus3HSpectraCount"/>
-        <odo-dt:summationOf rdf:resource="http://schema.oceanproteinportal.org/v1.0/Parameter_Plus4HSpectraCount"/>
+        <odo-dt:summationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus2HSpectraCount"/>
+        <odo-dt:summationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus3HSpectraCount"/>
+        <odo-dt:summationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus4HSpectraCount"/>
         <rdfs:comment xml:lang="en-us">Sum of +2,+3,+4 data, = total unnormalized spectral counts - Quantitative Value</rdfs:comment>
         <rdfs:label xml:lang="en-us">Parameter - Peptide Spectral Count Sum</rdfs:label>
     </owl:NamedIndividual>
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStartIndex -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStartIndex -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStartIndex">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStartIndex">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <rdfs:comment xml:lang="en-us">Data useful in creating peptide coverage map</rdfs:comment>
         <rdfs:label xml:lang="en-us">Parameter - Peptide start index</rdfs:label>
@@ -388,9 +388,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStopIndex -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStopIndex -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStopIndex">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStopIndex">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:annotationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStartIndex"/>
         <rdfs:comment xml:lang="en-us">Data useful in creating peptide coverage map</rdfs:comment>
@@ -399,9 +399,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_PfamsDescription -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsDescription -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_PfamsDescription">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsDescription">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:annotationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsIdentifier"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Description"/>
@@ -411,9 +411,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_PfamsIdentifier -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsIdentifier -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_PfamsIdentifier">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsIdentifier">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier"/>
         <rdfs:comment xml:lang="en-us">Representative of a Pfams identifier or accession.</rdfs:comment>
@@ -422,9 +422,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_Plus2HSpectraCount -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus2HSpectraCount -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_Plus2HSpectraCount">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus2HSpectraCount">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount"/>
         <rdfs:comment xml:lang="en-us">Number of identified +2H spectra</rdfs:comment>
@@ -433,9 +433,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_Plus3HSpectraCount -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus3HSpectraCount -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_Plus3HSpectraCount">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus3HSpectraCount">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount"/>
         <rdfs:comment xml:lang="en-us">Number of identified +3H spectra</rdfs:comment>
@@ -444,9 +444,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_Plus4HSpectraCount -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus4HSpectraCount -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_Plus4HSpectraCount">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus4HSpectraCount">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount"/>
         <rdfs:comment xml:lang="en-us">Number of identified +4H spectra</rdfs:comment>
@@ -455,9 +455,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinGeneticSequenceIdentifier -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinGeneticSequenceIdentifier -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinGeneticSequenceIdentifier">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinGeneticSequenceIdentifier">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_GeneticSequenceIdentifier"/>
         <rdfs:comment xml:lang="en-us">A genetic sequence identifying a protein.</rdfs:comment>
@@ -466,9 +466,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinIdentifier -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinIdentifier -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinIdentifier">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinIdentifier">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier"/>
         <rdfs:comment xml:lang="en-us">Uniquely identifies one proteins within a sample.</rdfs:comment>
@@ -477,9 +477,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinMolecularWeight_Daltons -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinMolecularWeight_Daltons -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinMolecularWeight_Daltons">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinMolecularWeight_Daltons">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_MolecularWeightInDaltons"/>
         <rdfs:comment xml:lang="en-us">The molecular weight measured in Daltons of the related protein.</rdfs:comment>
@@ -488,9 +488,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/Parameter_UniprotIdentifier -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/Parameter_UniprotIdentifier -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/Parameter_UniprotIdentifier">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/Parameter_UniprotIdentifier">
         <rdf:type rdf:resource="http://ocean-data.org/schema/Parameter"/>
         <odo-dt:specializationOf rdf:resource="http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier"/>
         <rdfs:comment xml:lang="en-us">Representative of a Uniprot identifier.</rdfs:comment>
@@ -499,9 +499,9 @@
 
 
 
-    <!-- http://schema.oceanproteinportal.org/v1.0/SubjectArea_OceanProteomics -->
+    <!-- http://ocean-data.org/schema/data-type/v1.0/SubjectArea_OceanProteomics -->
 
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v1.0/SubjectArea_OceanProteomics">
+    <owl:NamedIndividual rdf:about="http://ocean-data.org/schema/data-type/v1.0/SubjectArea_OceanProteomics">
         <rdf:type rdf:resource="http://ocean-data.org/schema/data-type/v1.0/SubjectArea"/>
         <rdfs:comment xml:lang="en-us">Ocean Proteoms</rdfs:comment>
         <rdfs:label xml:lang="en-us">Subject Area - Ocean Proteomics</rdfs:label>

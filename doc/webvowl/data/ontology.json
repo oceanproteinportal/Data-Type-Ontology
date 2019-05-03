@@ -33,18 +33,7 @@
         "value" : "2012-01-01",
         "type" : "label"
       } ],
-      "modified" : [ {
-        "identifier" : "modified",
-        "language" : "undefined",
-        "value" : "2019-03-30",
-        "type" : "label"
-      } ],
       "publisher" : [ {
-        "identifier" : "publisher",
-        "language" : "undefined",
-        "value" : "http://lod.bco-dmo.org/id/affiliation/191",
-        "type" : "iri"
-      }, {
         "identifier" : "publisher",
         "language" : "en-us",
         "value" : "Biological and Chemical Oceanography Data Management Office (BCO-DMO)",
@@ -52,24 +41,29 @@
       }, {
         "identifier" : "publisher",
         "language" : "undefined",
+        "value" : "http://lod.bco-dmo.org/id/affiliation/191",
+        "type" : "iri"
+      }, {
+        "identifier" : "publisher",
+        "language" : "undefined",
         "value" : "Biological and Chemical Oceanography Data Management Office (BCO-DMO)",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2019-03-30",
         "type" : "label"
       } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
         "language" : "undefined",
-        "value" : "http://schema.oceanproteinportal.org/v1.0/",
+        "value" : "opp",
         "type" : "label"
       }, {
         "identifier" : "preferredNamespaceUri",
         "language" : "undefined",
-        "value" : "odo-dt",
-        "type" : "label"
-      } ],
-      "source" : [ {
-        "identifier" : "source",
-        "language" : "undefined",
-        "value" : "https://github.com/oceanproteinportal/Data-Type-Ontology",
+        "value" : "http://schema.oceanproteinportal.org/v1.0/",
         "type" : "label"
       } ],
       "versionInfo" : [ {
@@ -78,16 +72,22 @@
         "value" : "1.0",
         "type" : "label"
       } ],
-      "title" : [ {
-        "identifier" : "title",
-        "language" : "en-us",
-        "value" : "Ocean Protein Portal Ontology",
+      "source" : [ {
+        "identifier" : "source",
+        "language" : "undefined",
+        "value" : "https://github.com/oceanproteinportal/Data-Type-Ontology",
         "type" : "label"
       } ],
       "issued" : [ {
         "identifier" : "issued",
         "language" : "undefined",
         "value" : "2019-03-02",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en-us",
+        "value" : "Ocean Protein Portal Ontology",
         "type" : "label"
       } ],
       "seeAlso" : [ {
@@ -103,7 +103,7 @@
     "classCount" : 5,
     "objectPropertyCount" : 13,
     "datatypePropertyCount" : 2,
-    "individualCount" : 79
+    "individualCount" : 73
   },
   "class" : [ {
     "id" : "3",
@@ -121,10 +121,10 @@
     "id" : "17",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "5",
+    "id" : "1",
     "type" : "owl:Class"
   }, {
-    "id" : "1",
+    "id" : "5",
     "type" : "owl:Class"
   }, {
     "id" : "2",
@@ -147,24 +147,32 @@
       "IRI-based" : "Parameter"
     },
     "individuals" : [ {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_OtherIdentifiedProteins",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinMolecularWeight_Daltons",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "A list of other identified proteins within a sample."
+        "en-us" : "The molecular weight measured in Daltons of the related protein."
       },
       "labels" : {
-        "IRI-based" : "Parameter_OtherIdentifiedProteins",
-        "en-us" : "Parameter - Other Identified Proteins"
+        "IRI-based" : "Parameter_ProteinMolecularWeight_Daltons",
+        "en-us" : "Parameter - Protein Molecular Weight in Daltons"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_BestProteinIdentifierProbability",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggOrthologyDescription",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "annotations" : {
+        "odo-annotationOf" : [ {
+          "identifier" : "odo-annotationOf",
+          "language" : "undefined",
+          "value" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggIdentifier",
+          "type" : "iri"
+        } ]
+      },
       "comment" : {
-        "en-us" : "Metric of peptide quality."
+        "en-us" : "The Kegg description related to an identified Kegg Identifier."
       },
       "labels" : {
-        "IRI-based" : "Parameter_BestProteinIdentifierProbability",
-        "en-us" : "Parameter - Best Peptide identification probability"
+        "IRI-based" : "Parameter_KeggOrthologyDescription",
+        "en-us" : "Parameter - Kegg Orthology Description"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_TotalIonChromatogram",
@@ -188,6 +196,16 @@
       "labels" : {
         "IRI-based" : "Parameter_TotalIonChromatogram",
         "en-us" : "Parameter - Total Ion Chromatogram"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStartIndex",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "Data useful in creating peptide coverage map"
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_PeptideStartIndex",
+        "en-us" : "Parameter - Peptide start index"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_SampleIdentifier",
@@ -220,34 +238,24 @@
         "en-us" : "Parameter - Cruise Station Identifier"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_AbsoluteUnits-FemtomolePerLiter",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus4HSpectraCount",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "Absolute Units in femtomole per liter"
+        "en-us" : "Number of identified +4H spectra"
       },
       "labels" : {
-        "IRI-based" : "Parameter_AbsoluteUnits-FemtomolePerLiter",
-        "en-us" : "Parameter - Absolute Units in femtomole per liter"
+        "IRI-based" : "Parameter_Plus4HSpectraCount",
+        "en-us" : "Parameter - Number of identified +4H spectra"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyIdentifier",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_UniprotIdentifier",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "Kegg identifier or accession."
+        "en-us" : "Representative of a Uniprot identifier."
       },
       "labels" : {
-        "IRI-based" : "Parameter_KeggOrthologyIdentifier",
-        "en-us" : "Parameter - Kegg Orthology Identifier"
-      }
-    }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_BestNCBITaxonName",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
-      "comment" : {
-        "en-us" : "The best taxonomic species name at NCBI related to a Taxon identifier."
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_BestNCBITaxonName",
-        "en-us" : "Parameter - Best NCBI Taxon Name"
+        "IRI-based" : "Parameter_UniprotIdentifier",
+        "en-us" : "Parameter - Uniprot Identifier"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_MinFilterSize_Microns",
@@ -260,16 +268,6 @@
         "en-us" : "Parameter - Minimum Filter Size in Microns"
       }
     }, {
-      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_MinimumFilterSize",
-      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
-      "comment" : {
-        "en-us" : "The minimum size of some filter."
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_MinimumFilterSize",
-        "en-us" : "Parameter - Filter Size"
-      }
-    }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_NCBITaxonIdentifier",
       "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
@@ -278,6 +276,16 @@
       "labels" : {
         "IRI-based" : "Parameter_NCBITaxonIdentifier",
         "en-us" : "Parameter - NCBI Taxon Identifier"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_MinimumFilterSize",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "The minimum size of some filter."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_MinimumFilterSize",
+        "en-us" : "Parameter - Filter Size"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_TotalPrecursorIntensity",
@@ -290,34 +298,34 @@
         "en-us" : "Parameter - Total Precursor Intensity"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_BestNCBITaxonIdentifier",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_BestSequestDCnScore",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "Representative of the best taxon identifier at NCBI that could be associated to an identiciation."
+        "en-us" : "Metric of peptide quality."
       },
       "labels" : {
-        "IRI-based" : "Parameter_BestNCBITaxonIdentifier",
-        "en-us" : "Parameter - Best NCBI Taxon Identifier"
+        "IRI-based" : "Parameter_BestSequestDCnScore",
+        "en-us" : "Parameter - Best SEQUEST DCn score"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideGeneticSequenceIdentifier",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_EnzymeCommissionIdentifier",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "A genetic sequence identifying a peptide."
+        "en-us" : "Representative of a Enzyme Commission identifier."
       },
       "labels" : {
-        "IRI-based" : "Parameter_PeptideGeneticSequenceIdentifier",
-        "en-us" : "Parameter - Peptide Genetic Sequence Identifier"
+        "IRI-based" : "Parameter_EnzymeCommissionIdentifier",
+        "en-us" : "Parameter - Enzyme Commission Identifier"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_PfamsDescription",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggOrthologyName",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-usparameter -" : "The Pfams description related to an identified PFams Identifier."
+        "en-us" : "The Kegg pathway related to an identified Kegg Identifier."
       },
       "labels" : {
-        "IRI-based" : "Parameter_PfamsDescription",
-        "en-us" : "Pfams Description"
+        "IRI-based" : "Parameter_KeggOrthologyName",
+        "en-us" : "Parameter - Kegg Orthology Name"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_SpectralCount",
@@ -330,6 +338,16 @@
         "en-us" : "Parameter - Spectral Count"
       }
     }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonIdentifier",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "Representative of the best taxon identifier at NCBI that could be associated to an identiciation."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_BestNCBITaxonIdentifier",
+        "en-us" : "Parameter - Best NCBI Taxon Identifier"
+      }
+    }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_MaxFilterSize_Microns",
       "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
@@ -340,14 +358,24 @@
         "en-us" : "Parameter - Maximum Filter Size in Microns"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_PfamsIdentifier",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus3HSpectraCount",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "Representative of a Pfams identifier or accession."
+        "en-us" : "Number of identified +3H spectra"
       },
       "labels" : {
-        "IRI-based" : "Parameter_PfamsIdentifier",
-        "en-us" : "Parameter - Pfams Identifier"
+        "IRI-based" : "Parameter_Plus3HSpectraCount",
+        "en-us" : "Parameter - Number of identified +3H spectra"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Plus2HSpectraCount",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "Number of identified +2H spectra"
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_Plus2HSpectraCount",
+        "en-us" : "Parameter - Number of identified +2H spectra"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth",
@@ -360,6 +388,16 @@
         "en-us" : "Parameter - Depth"
       }
     }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinIdentifier",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "Uniquely identifies one proteins within a sample."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_ProteinIdentifier",
+        "en-us" : "Parameter - Protein Identifier"
+      }
+    }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_CruiseIdentifier",
       "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
@@ -368,16 +406,6 @@
       "labels" : {
         "IRI-based" : "Parameter_CruiseIdentifier",
         "en-us" : "Parameter - Cruise Identifier"
-      }
-    }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStartIndex",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
-      "comment" : {
-        "en-us" : "Data useful in creating peptide coverage map"
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_PeptideStartIndex",
-        "en-us" : "Parameter - Peptide start index"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Latitude_DecimalDegrees",
@@ -423,16 +451,6 @@
         "en-us" : "Parameter - Date Time"
       }
     }, {
-      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth_Meters",
-      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
-      "comment" : {
-        "en-us" : "A depth measurement made in meters."
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_Depth_Meters",
-        "en-us" : "Parameter - Depth in Meters"
-      }
-    }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Longitude",
       "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
@@ -441,6 +459,16 @@
       "labels" : {
         "IRI-based" : "Parameter_Longitude",
         "en-us" : "Parameter - Longitude"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Depth_Meters",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "A depth measurement made in meters."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_Depth_Meters",
+        "en-us" : "Parameter - Depth in Meters"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Longitude_DecimalDegrees",
@@ -453,16 +481,6 @@
         "en-us" : "Parameter - Longitude in Decical Degrees"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_IdentifiedProductName",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
-      "comment" : {
-        "en-us" : "The best product name for an identification made in a smaple (best hit annotation)."
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_IdentifiedProductName",
-        "en-us" : "Parameter - Identified Product Name"
-      }
-    }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Identifier",
       "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
@@ -473,42 +491,24 @@
         "en-us" : "Parameter - Identifier"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_BestSequestXCorrScore",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_AbsoluteUnits-FemtomolePerLiter",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "Metric of peptide quality."
+        "en-us" : "Absolute Units in femtomole per liter"
       },
       "labels" : {
-        "IRI-based" : "Parameter_BestSequestXCorrScore",
-        "en-us" : "Parameter - Best SEQUEST XCorr score"
+        "IRI-based" : "Parameter_AbsoluteUnits-FemtomolePerLiter",
+        "en-us" : "Parameter - Absolute Units in femtomole per liter"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinMolecularWeight_Daltons",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideStopIndex",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "The molecular weight measured in Daltons of the related protein."
+        "en-us" : "Data useful in creating peptide coverage map"
       },
       "labels" : {
-        "IRI-based" : "Parameter_ProteinMolecularWeight_Daltons",
-        "en-us" : "Parameter - Protein Molecular Weight in Daltons"
-      }
-    }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyDescription",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
-      "annotations" : {
-        "odo-annotationOf" : [ {
-          "identifier" : "odo-annotationOf",
-          "language" : "undefined",
-          "value" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggIdentifier",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en-us" : "The Kegg description related to an identified Kegg Identifier."
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_KeggOrthologyDescription",
-        "en-us" : "Parameter - Kegg Orthology Description"
+        "IRI-based" : "Parameter_PeptideStopIndex",
+        "en-us" : "Parameter - Peptide stop index"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_FilterSize",
@@ -541,14 +541,14 @@
         "en-us" : "Parameter - Date"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinGeneticSequenceIdentifier",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_KeggOrthologyIdentifier",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "A genetic sequence identifying a protein."
+        "en-us" : "Kegg identifier or accession."
       },
       "labels" : {
-        "IRI-based" : "Parameter_ProteinGeneticSequenceIdentifier",
-        "en-us" : "Parameter - Protein Genetic Sequence Identifier"
+        "IRI-based" : "Parameter_KeggOrthologyIdentifier",
+        "en-us" : "Parameter - Kegg Orthology Identifier"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_MedianRetentionTime",
@@ -581,44 +581,34 @@
         "en-us" : "Parameter - Latitude"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_BestSequestDCnScore",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsIdentifier",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "Metric of peptide quality."
+        "en-us" : "Representative of a Pfams identifier or accession."
       },
       "labels" : {
-        "IRI-based" : "Parameter_BestSequestDCnScore",
-        "en-us" : "Parameter - Best SEQUEST DCn score"
+        "IRI-based" : "Parameter_PfamsIdentifier",
+        "en-us" : "Parameter - Pfams Identifier"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_UniprotIdentifier",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_PfamsDescription",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "Representative of a Uniprot identifier."
+        "en-usparameter -" : "The Pfams description related to an identified PFams Identifier."
       },
       "labels" : {
-        "IRI-based" : "Parameter_UniprotIdentifier",
-        "en-us" : "Parameter - Uniprot Identifier"
+        "IRI-based" : "Parameter_PfamsDescription",
+        "en-us" : "Pfams Description"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideSpectralCountSum",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideSpectralCountSum",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
         "en-us" : "Sum of +2,+3,+4 data, = total unnormalized spectral counts - Quantitative Value"
       },
       "labels" : {
         "IRI-based" : "Parameter_PeptideSpectralCountSum",
         "en-us" : "Parameter - Peptide Spectral Count Sum"
-      }
-    }, {
-      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Description",
-      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
-      "comment" : {
-        "en-us" : "A description of a thing."
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_Description",
-        "en-us" : "Parameter - Description"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Count",
@@ -631,6 +621,56 @@
         "en-us" : "Parameter - Count"
       }
     }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Description",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "A description of a thing."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_Description",
+        "en-us" : "Parameter - Description"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_PeptideGeneticSequenceIdentifier",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "A genetic sequence identifying a peptide."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_PeptideGeneticSequenceIdentifier",
+        "en-us" : "Parameter - Peptide Genetic Sequence Identifier"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_ProteinGeneticSequenceIdentifier",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "A genetic sequence identifying a protein."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_ProteinGeneticSequenceIdentifier",
+        "en-us" : "Parameter - Protein Genetic Sequence Identifier"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_IdentifiedProductName",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "The best product name for an identification made in a smaple (best hit annotation)."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_IdentifiedProductName",
+        "en-us" : "Parameter - Identified Product Name"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_BestNCBITaxonName",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "The best taxonomic species name at NCBI related to a Taxon identifier."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_BestNCBITaxonName",
+        "en-us" : "Parameter - Best NCBI Taxon Name"
+      }
+    }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_MaximumFilterSize",
       "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
@@ -639,46 +679,6 @@
       "labels" : {
         "IRI-based" : "Parameter_MaximumFilterSize",
         "en-us" : "Parameter - Maximum Filter Size"
-      }
-    }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_PeptideStopIndex",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
-      "comment" : {
-        "en-us" : "Data useful in creating peptide coverage map"
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_PeptideStopIndex",
-        "en-us" : "Parameter - Peptide stop index"
-      }
-    }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_ProteinIdentifier",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
-      "comment" : {
-        "en-us" : "Uniquely identifies one proteins within a sample."
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_ProteinIdentifier",
-        "en-us" : "Parameter - Protein Identifier"
-      }
-    }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_EnzymeCommissionIdentifier",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
-      "comment" : {
-        "en-us" : "Representative of a Enzyme Commission identifier."
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_EnzymeCommissionIdentifier",
-        "en-us" : "Parameter - Enzyme Commission Identifier"
-      }
-    }, {
-      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Probability",
-      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
-      "comment" : {
-        "en-us" : "A probability of some thing."
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_Probability",
-        "en-us" : "Parameter - Probabiliy"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_MolecularWeight_Daltons",
@@ -691,14 +691,24 @@
         "en-us" : "Parameter - Molecular Weight in Daltons"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_KeggOrthologyName",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Probability",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "The Kegg pathway related to an identified Kegg Identifier."
+        "en-us" : "A probability of some thing."
       },
       "labels" : {
-        "IRI-based" : "Parameter_KeggOrthologyName",
-        "en-us" : "Parameter - Kegg Orthology Name"
+        "IRI-based" : "Parameter_Probability",
+        "en-us" : "Parameter - Probabiliy"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_BestProteinIdentifierProbability",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "Metric of peptide quality."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_BestProteinIdentifierProbability",
+        "en-us" : "Parameter - Best Peptide identification probability"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_Time",
@@ -711,16 +721,6 @@
         "en-us" : "Parameter - Date"
       }
     }, {
-      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_GeneticSequenceIdentifier",
-      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
-      "comment" : {
-        "en-us" : "A genetic sequence; e.g. the order of nucleotides in DNA or RNA."
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_GeneticSequenceIdentifier",
-        "en-us" : "Parameter - Genetic Sequence Identifier"
-      }
-    }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_IdentificationProbability",
       "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
@@ -731,14 +731,34 @@
         "en-us" : "Parameter - Best Peptide identification probability"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_Plus4HSpectraCount",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_GeneticSequenceIdentifier",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "Number of identified +4H spectra"
+        "en-us" : "A genetic sequence; e.g. the order of nucleotides in DNA or RNA."
       },
       "labels" : {
-        "IRI-based" : "Parameter_Plus4HSpectraCount",
-        "en-us" : "Parameter - Number of identified +4H spectra"
+        "IRI-based" : "Parameter_GeneticSequenceIdentifier",
+        "en-us" : "Parameter - Genetic Sequence Identifier"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_OtherIdentifiedProteins",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "A list of other identified proteins within a sample."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_OtherIdentifiedProteins",
+        "en-us" : "Parameter - Other Identified Proteins"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_BestSequestXCorrScore",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "comment" : {
+        "en-us" : "Metric of peptide quality."
+      },
+      "labels" : {
+        "IRI-based" : "Parameter_BestSequestXCorrScore",
+        "en-us" : "Parameter - Best SEQUEST XCorr score"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/Parameter_StationIdentifier",
@@ -749,26 +769,6 @@
       "labels" : {
         "IRI-based" : "Parameter_StationIdentifier",
         "en-us" : "Parameter - Station Identifier"
-      }
-    }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_Plus3HSpectraCount",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
-      "comment" : {
-        "en-us" : "Number of identified +3H spectra"
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_Plus3HSpectraCount",
-        "en-us" : "Parameter - Number of identified +3H spectra"
-      }
-    }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/Parameter_Plus2HSpectraCount",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
-      "comment" : {
-        "en-us" : "Number of identified +2H spectra"
-      },
-      "labels" : {
-        "IRI-based" : "Parameter_Plus2HSpectraCount",
-        "en-us" : "Parameter - Number of identified +2H spectra"
       }
     } ],
     "subClasses" : [ "5" ],
@@ -796,20 +796,6 @@
       "IRI-based" : "string"
     }
   }, {
-    "iri" : "http://ocean-data.org/schema/data-type/v1.0/InferredParamter",
-    "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "InferredParamter",
-      "en-us" : "InferredParamter"
-    },
-    "comment" : {
-      "en-us" : "An inferred parameter is a parameter whoa value is not explicitly recorded in the Dataset,\n        but that can be inferred based on its data type and related metadata. For example, dataset collected on a Cruise\n        might not explicitly record the cruise in the dataset, but that it can be inferred through the metadata:\n        (odo:Dataset -> odo:fromDeployment [ dc:title ])."
-    },
-    "attributes" : [ "external" ],
-    "id" : "5",
-    "superClasses" : [ "4" ]
-  }, {
     "iri" : "http://ocean-data.org/schema/data-type/v1.0/DataType",
     "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
     "instances" : 0,
@@ -818,14 +804,21 @@
       "en-us" : "DataType"
     },
     "individuals" : [ {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/DataType_OceanProteinPortalDataType_Total-Spectral-Counts",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/DataType_ProteinSpectralCounts",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "A aggreagate dataset of protein total spectral counts and pepetide total spectral counts and protein identifications"
+        "en-us" : "A data type that measures the total spectral counts across protein observations."
       },
       "labels" : {
-        "IRI-based" : "DataType_OceanProteinPortalDataType_Total-Spectral-Counts",
-        "en-us" : "Data Type - Total Spectral Counts"
+        "IRI-based" : "DataType_ProteinSpectralCounts",
+        "en-us" : "Data Type - Protein Spectral Counts"
+      }
+    }, {
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/DataType_PeptideSpectralCounts",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+      "labels" : {
+        "IRI-based" : "DataType_PeptideSpectralCounts",
+        "en-us" : "Data Type - Peptide Spectral Counts"
       }
     }, {
       "iri" : "http://ocean-data.org/schema/data-type/v1.0/DataType_CruiseResults",
@@ -838,25 +831,18 @@
         "en-us" : "DataType - Cruise Results"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/DataType_ProteinSpectralCounts",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/DataType_OceanProteinPortalDataType_Total-Spectral-Counts",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
-        "en-us" : "A data type that measures the total spectral counts across protein observations."
+        "en-us" : "A aggreagate dataset of protein total spectral counts and pepetide total spectral counts and protein identifications"
       },
       "labels" : {
-        "IRI-based" : "DataType_ProteinSpectralCounts",
-        "en-us" : "Data Type - Protein Spectral Counts"
+        "IRI-based" : "DataType_OceanProteinPortalDataType_Total-Spectral-Counts",
+        "en-us" : "Data Type - Total Spectral Counts"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/DataType_PeptideSpectralCounts",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
-      "labels" : {
-        "IRI-based" : "DataType_PeptideSpectralCounts",
-        "en-us" : "Data Type - Peptide Spectral Counts"
-      }
-    }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/DataType_FASTA-ProteinIdentifications",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/DataType_FASTA-ProteinIdentifications",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
         "en-us" : "A data type that records the genetic sequence of an identified protein."
       },
@@ -870,6 +856,20 @@
     },
     "attributes" : [ "external" ],
     "id" : "1"
+  }, {
+    "iri" : "http://ocean-data.org/schema/data-type/v1.0/InferredParameter",
+    "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InferredParameter",
+      "en-us" : "InferredParameter"
+    },
+    "comment" : {
+      "en-us" : "An inferred parameter is a parameter whoa value is not explicitly recorded in the Dataset,\n        but that can be inferred based on its data type and related metadata. For example, dataset collected on a Cruise\n        might not explicitly record the cruise in the dataset, but that it can be inferred through the metadata:\n        (odo:Dataset -> odo:fromDeployment [ dc:title ])."
+    },
+    "attributes" : [ "external" ],
+    "id" : "5",
+    "superClasses" : [ "4" ]
   }, {
     "iri" : "http://ocean-data.org/schema/data-type/v1.0/SubjectArea",
     "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
@@ -889,8 +889,8 @@
         "en-us" : "SubjectArea - Proteomics"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v1.0/SubjectArea_OceanProteomics",
-      "baseIri" : "http://schema.oceanproteinportal.org/v1.0",
+      "iri" : "http://ocean-data.org/schema/data-type/v1.0/SubjectArea_OceanProteomics",
+      "baseIri" : "http://ocean-data.org/schema/data-type/v1.0",
       "comment" : {
         "en-us" : "Ocean Proteoms"
       },
